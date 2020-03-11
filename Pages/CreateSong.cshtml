@@ -40,7 +40,9 @@
             </table>
             <input type="submit" value="Opslaan" />
         </form>
-
+        @{
+            //Pagina 15
+        }
         @if (IsPost)
         {
             DataRow dr = mySongMethods.GetEmptyDataRow();
@@ -52,6 +54,7 @@
 
             mySongMethods.CreateSong(dr, file);
             Response.Redirect(@"~/index.cshtml");
+            //Pagina 16
         }
     </div>
 </body>

@@ -7,8 +7,10 @@
     SongMethods mySongMethods = new SongMethods();
     string file = @"~\App_Data\PlayList.xml";
     DataSet ds = mySongMethods.GetAllSongs(file);
+    //Pagina 10
     Session["playlistClass"] = mySongMethods;
     Session["file"] = file;
+    //Pagina 13
 }
 
 <html>
@@ -35,6 +37,7 @@
                 <td>@dr["title"]</td>
                 <td>@dr["fileLocation"]</td>
             </tr>
+        //Pagina 11
         }
     </table>
     <a href="~/Pages/CreateSong.cshtml">Create Songs</a>

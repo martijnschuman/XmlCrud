@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<playlist>
+  <songs>
+    <id>1</id>
+    <artist>test</artist>
+    <title>test</title>
+  </songs>
+  <songs>
+    <id>1</id>
+    <artist>test</artist>
+    <title>test</title>
+  </songs>
+</playlist>

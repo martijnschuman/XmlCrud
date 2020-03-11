@@ -90,6 +90,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\PlayList.xml" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -208,6 +209,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\SongMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -223,8 +225,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
-    <Folder Include="App_Data\" />
     <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>

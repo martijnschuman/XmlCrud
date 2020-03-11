@@ -1,17 +1,27 @@
-﻿@{
-    Layout = null;
-}
+﻿<!DOCTYPE html>
 
-<!DOCTYPE html>
+@using System.Data;
+@using XmlCrud.App_Code;
+
+@{
+    SongMethods mySongMethods = new SongMethods();
+    DataSet ds = mySongMethods.GetAllSongs();
+}
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <title>PlayMusic</title>
 </head>
 <body>
-    <div>
-    
-    </div>
+    <table>
+        @foreach (DataRow dr in ds.Tables["songs"].Rows)
+        {
+            <tr>
+                <td>@dr["id"]</td>
+                <td>@dr["artist"]</td>
+                <td>@dr["title"]</td>
+            </tr>
+        }
+    </table>
 </body>
 </html>

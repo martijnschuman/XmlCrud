@@ -4,13 +4,10 @@
 @using XmlCrud.App_Code;
 
 @{
-    SongMethods mySongMethods = new SongMethods();
-    string file = @"~\App_Data\PlayList.xml";
-    DataSet ds = mySongMethods.GetAllSongs(file);
-    //Pagina 10
-    Session["playlistClass"] = mySongMethods;
-    Session["file"] = file;
-    //Pagina 13
+    SongMethods mySongMethods = Session["playlistClass"] as SongMethods;
+    string file = Session["file"] as string;
+
+    //Pagina 17
 }
 
 <html>
@@ -22,25 +19,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 <body>
-    <table>
-        <tr>
-            <td>ID</td>
-            <td>Artiest</td>
-            <td>Title</td>
-            <td>Bestand locatie</td>
-        </tr>
-        @foreach (DataRow dr in ds.Tables["songs"].Rows)
-        {
-            <tr>
-                <td>@dr["id"]</td>
-                <td>@dr["artist"]</td>
-                <td>@dr["title"]</td>
-                <td>@dr["fileLocation"]</td>
-            </tr>
-        //Pagina 11
-        }
-    </table>
-    <a href="~/Pages/CreateSong.cshtml">Create Songs</a>
-    <a href="~/Pages/DeleteSong.cshtml">Delete Songs</a>
+    <div>
+        <p>Weet u zeker dat u deze song wilt verwijderen?</p>
+        <form method="post">
+            Ja <input type="radio" name="DeleteSong" value="ja" />
+            Nee <input type="radio" name="DeleteSong" value="Nee" />
+
+            <input type="submit" value="Verder" />
+        </form>
+    </div>
 </body>
 </html>

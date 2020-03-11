@@ -1,13 +1,21 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" standalone="yes"?>
 <playlist>
   <songs>
     <id>1</id>
-    <artist>test</artist>
-    <title>test</title>
+    <artist>Artiest1</artist>
+    <title>Title1</title>
+    <fileLocation>Locatie1</fileLocation>
   </songs>
   <songs>
-    <id>1</id>
-    <artist>test</artist>
-    <title>test</title>
+    <id>2</id>
+    <artist>Artiest2</artist>
+    <title>Title2</title>
+    <fileLocation>Locatie2</fileLocation>
+  </songs>
+  <songs>
+    <id>3</id>
+    <artist>Trekker</artist>
+    <title>Geweldige title</title>
+    <fileLocation>asassdasd</fileLocation>
   </songs>
 </playlist>

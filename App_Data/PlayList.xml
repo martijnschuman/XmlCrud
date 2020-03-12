@@ -24,4 +24,10 @@
     <title>PoahDasEenMooiDing</title>
     <fileLocation>asdasdasdasdsa.mp3</fileLocation>
   </songs>
+  <songs>
+    <id>5</id>
+    <artist>TR2</artist>
+    <title>Trekker</title>
+    <fileLocation>sdfaiosdfjasdlf</fileLocation>
+  </songs>
 </playlist>

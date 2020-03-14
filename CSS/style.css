@@ -1,0 +1,85 @@
+﻿html {
+    font-family: Arial;
+    margin: 0px;
+    padding: 0px;
+    background-image: url("../Images/Achtergrond.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    scroll-behavior: smooth;
+}
+
+p {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+/*Link Kleur*/
+a:link, a:visited, a:hover, a:active {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+:root {
+    --transform: scale(1.05);
+    --transition: all .15s ease-in-out;
+}
+
+/*Text input velden*/
+.textInputNormal {
+    width: 100%;
+    padding: 15px;
+    margin: 0px 0 10px 0;
+    display: inline-block;
+    border: none;
+}
+
+/*Kleine input veld*/
+.textInputSmall {
+    width: 49.7%;
+    ;
+    padding: 15px;
+    margin: 0px 0px 10px 0px;
+    display: inline-block;
+    border: none;
+    margin-bottom: 4px;
+}
+
+/*Submit knop*/
+.submit {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: 18px;
+}
+
+    .submit:hover {
+        background-color: rgb(3, 151, 3);
+        transform: var(--transform);
+    }
+
+.smallLink {
+    display: block;
+    font-size: 14px;
+    width: 155px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    color: rgb(145, 145, 145) !important;
+    transition: color 0.2s ease;
+}
+
+    .smallLink:hover {
+        color: rgb(196, 196, 196) !important;
+    }

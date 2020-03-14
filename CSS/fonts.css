@@ -1,0 +1,19 @@
+﻿@font-face {
+    src: url(Fonts/BioRhyme/BioRhyme-Regular.ttf);
+    font-family: BioRhyme-Regular;
+}
+
+@font-face {
+    src: url(Fonts/Roboto_Mono/RobotoMono-Regular.ttf);
+    font-family: RobotoMon-Regular;
+}
+
+@font-face {
+    src: url(Fonts/Crete_Round/CreteRound-Regular.ttf);
+    font-family: CreteRound-Regular;
+}
+
+@font-face {
+    src: url(Fonts/Anton-Regular/Anton-Regular.ttf);
+    font-family: Anton-Regular;
+}

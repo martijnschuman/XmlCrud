@@ -114,15 +114,6 @@
     font-size: 20px !important;
 }
 
-/*Input veld*/
-.accountInputBox {
-    width: 88.6%;
-    padding: 12px 10px 10px;
-    margin: 0px 0px 10px 0px;
-    display: inline-block;
-    border: none;
-}
-
 /*Positie login/signup submit knop*/
 #accountSubmit {
     margin: 0 auto;

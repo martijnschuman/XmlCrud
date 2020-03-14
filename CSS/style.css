@@ -31,11 +31,11 @@ a:link, a:visited, a:hover, a:active {
     --transition: all .15s ease-in-out;
 }
 
-/*Text input velden*/
-.textInputNormal {
-    width: 100%;
-    padding: 15px;
-    margin: 0px 0 10px 0;
+/*Input veld*/
+.InputBox {
+    width: 83.15%;
+    padding: 12px 10px 10px;
+    margin: 0px 0px 10px 0px;
     display: inline-block;
     border: none;
 }

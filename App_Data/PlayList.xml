@@ -30,4 +30,10 @@
     <title>Trekker</title>
     <fileLocation>sdfaiosdfjasdlf</fileLocation>
   </songs>
+  <songs>
+    <id>5</id>
+    <artist>Trekker</artist>
+    <title>Counter Strike: Global Offensive</title>
+    <fileLocation>sadasd</fileLocation>
+  </songs>
 </playlist>

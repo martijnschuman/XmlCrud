@@ -43,7 +43,6 @@ a:link, a:visited, a:hover, a:active {
 /*Kleine input veld*/
 .textInputSmall {
     width: 49.7%;
-    ;
     padding: 15px;
     margin: 0px 0px 10px 0px;
     display: inline-block;

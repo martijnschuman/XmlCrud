@@ -87,7 +87,7 @@
     background-color: rgba(255, 45, 45, 0.8);
     padding: 10px;
     margin-bottom: 10px;
-    font-style: 16px;
+    font-size: 16px;
     border: 3px solid darkred;
     border-radius: 10px;
 }
@@ -103,7 +103,7 @@
 
 /*Icoon voor input veld*/
 .accountIcon {
-    padding: 7 10 10;
+    padding: 7px 10px 10px;
     background: gray;
     color: white;
     width: 19px;
@@ -117,7 +117,7 @@
 /*Input veld*/
 .accountInputBox {
     width: 88.6%;
-    padding: 12 10 10;
+    padding: 12px 10px 10px;
     margin: 0px 0px 10px 0px;
     display: inline-block;
     border: none;

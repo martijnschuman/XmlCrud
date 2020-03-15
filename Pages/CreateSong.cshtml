@@ -21,7 +21,25 @@
         <form method="post">
             <div class="accountDiv">
                 <p id="accountTitle">PlayMusic</p>
-                <p id="accountSubTitle">Voer hier de gegevens van een nieuw nummer toe:</p>
+                <p id="accountSubTitle">Nieuw nummer toevoegen</p>
+
+                @if (IsPost)
+                {
+                    DataRow dr = mySongMethods.GetEmptyDataRow();
+
+                    dr[0] = Request.Form["id"];
+                    dr[1] = Request.Form["artist"];
+                    dr[2] = Request.Form["title"];
+                    dr[3] = Request.Form["fileLocation"];
+
+                    mySongMethods.CreateSong(dr, file);
+                    <div id='accountSuccess'>
+                        <p>Nummer succesvol toegevoegd.</p>
+                        <p>U wordt automatisch terug gestuurd naar de home pagina.</p>
+                    </div>
+                    Response.AddHeader("REFRESH", "10;URL=../index.cshtml");
+                    //Pagina 16
+                }
 
                 <div class="accountInputContainer">
                     <i class="fa fa-id-card accountIcon"></i><input class="InputBox" type="text" placeholder="ID" name="id" />
@@ -35,25 +53,9 @@
                 <div class="accountInputContainer">
                     <i class="fa fa-file accountIcon"></i><input class="InputBox" type="text" placeholder="Bestand locatie" name="fileLocation" />
                 </div>
-                <input type="submit" class="submit" id="accountSubmit" value="Opslaan" />
+                <input type="submit" class="submit" id="accountSubmit" value="Nummer toevoegen" />
             </div>
         </form>
-        @{
-            //Pagina 15
-        }
-        @if (IsPost)
-        {
-            DataRow dr = mySongMethods.GetEmptyDataRow();
-
-            dr[0] = Request.Form["id"];
-            dr[1] = Request.Form["artist"];
-            dr[2] = Request.Form["title"];
-            dr[3] = Request.Form["fileLocation"];
-
-            mySongMethods.CreateSong(dr, file);
-            Response.Redirect(@"~/index.cshtml");
-            //Pagina 16
-        }
     </div>
 </body>
 </html>

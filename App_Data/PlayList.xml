@@ -12,4 +12,10 @@
     <title>YesBlyaty</title>
     <fileLocation>sadasd.mp3</fileLocation>
   </songs>
+  <songs>
+    <id />
+    <artist />
+    <title />
+    <fileLocation />
+  </songs>
 </playlist>

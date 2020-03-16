@@ -20,14 +20,21 @@
     <link rel="shortcut icon" href="~/Images/icon.ico" type="image/x-icon">
 </head>
 <body>
-    <div>
-        <p>Weet u zeker dat u deze song wilt verwijderen?</p>
-        <form method="post">
-            Ja <input type="radio" name="DeleteSong" value="ja" />
-            Nee <input type="radio" name="DeleteSong" value="Nee" />
+    <div id="PlayDiv">
+        <img id="image" src="~/Images/Songs/Song1.jpg" />
+        <div id="player">
+            <div id="songTitle"></div>
+            <div id="buttons">
+                <button id="pre"><i class="fa fa-arrow-left PlayMusicButton"></i></button>
+                <button id="play"><i class="fa fa-play PlayMusicButton"></i></button>
+                <button id="next"><i class="fa fa-arrow-right PlayMusicButton"></i></button>
+            </div>
+        </div>
 
-            <input type="submit" value="Verder" />
-        </form>
+        <div id="seek-bar">
+            <div id="fill"></div>
+            <div id="handle"></div>
+        </div>
     </div>
 </body>
 </html>

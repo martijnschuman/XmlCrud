@@ -31,6 +31,10 @@ a:link, a:visited, a:hover, a:active {
     --transition: all .15s ease-in-out;
 }
 
+#Button1{
+    width: 100px;
+}
+
 /*Input veld*/
 .InputBox {
     width: 83.15%;
@@ -80,6 +84,35 @@ a:link, a:visited, a:hover, a:active {
     transition: color 0.2s ease;
 }
 
-    .smallLink:hover {
-        color: rgb(196, 196, 196) !important;
+.smallLink:hover {
+    color: rgb(196, 196, 196) !important;
+}
+
+/*Music player*/
+#PlayDiv{
+    width: 450px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: red;
+    position: relative;
+    top: 100px;
+}
+
+#image{
+    width: 98%;
+    height: 300px;
+    margin: 4px 4px 4px 4px;
+}
+
+#buttons{
+    text-align: center;
+}
+
+.PlayMusicButton {
+    transition: all .25s ease-in-out;
+    font-size: 30px !important;
+}
+
+    .PlayMusicButton:hover {
+        transform: scale(1.2);
     }

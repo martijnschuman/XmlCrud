@@ -17,11 +17,13 @@ namespace XmlCrud.App_Code
             DataColumn dcId = new DataColumn("id");
             DataColumn dcArtist = new DataColumn("artist");
             DataColumn dcTitle = new DataColumn("title");
+            DataColumn dcCover = new DataColumn("cover");
             DataColumn dcFileLocation = new DataColumn("fileLocation");
 
             dtSongs.Columns.Add(dcId);
             dtSongs.Columns.Add(dcArtist);
             dtSongs.Columns.Add(dcTitle);
+            dtSongs.Columns.Add(dcCover);
             dtSongs.Columns.Add(dcFileLocation);
             ds.Tables.Add(dtSongs);
 

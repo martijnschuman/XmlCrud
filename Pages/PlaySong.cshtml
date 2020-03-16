@@ -18,23 +18,135 @@
     <link rel="stylesheet" href="~/CSS/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="~/Images/icon.ico" type="image/x-icon">
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
 </head>
 <body>
     <div id="PlayDiv">
         <img id="image" src="~/Images/Songs/Song1.jpg" />
         <div id="player">
-            <div id="songTitle"></div>
-            <div id="buttons">
-                <button id="pre"><i class="fa fa-arrow-left PlayMusicButton"></i></button>
-                <button id="play"><i class="fa fa-play PlayMusicButton"></i></button>
-                <button id="next"><i class="fa fa-arrow-right PlayMusicButton"></i></button>
-            </div>
-        </div>
+            <div id="songTitle">*Title*</div>
 
-        <div id="seek-bar">
-            <div id="fill"></div>
-            <div id="handle"></div>
+            <div id="seek-bar">
+                <div id="fill"></div>
+                <div id="handle"></div>
+            </div>
+
+            <div id="currentTime">00:00 / 00:00</div>
+            <span title="Volume">
+                <input type="range" min="1" max="100" value="75" class="volumeSlider" id="volumeControll" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)">
+            </span>
+
+            <div id="buttons">
+                <span title="Vorig nummer"><button onclick="pre()" id="pre"><i class="fa fa-arrow-left PlayMusicButton"></i></button></span>
+                <span title="Speel of pauzeer"><button onclick="playOrPauseSong()" id="play"><i class="fa fa-play PlayMusicButton"></i></button></span>
+                <span title="Volgend nummer"><button onclick="next()" id="next"><i class="fa fa-arrow-right PlayMusicButton"></i></button></span>
+            </div>
         </div>
     </div>
 </body>
+
+<script type="text/javascript">
+
+    var songs = ["Song1.mp3","Song2.mp3","Song3.mp3"];
+    var poster = ["Poster1.jpg","Poster2.jpg","Poster3.jpg"];
+        
+    var songTitle = document.getElementById("songTitle");
+    var fillBar = document.getElementById("fill");
+
+    var currentTime = document.getElementById("currentTime");
+
+    var song = new Audio();
+    var currentSong = 0;
+
+    var slider = document.getElementById("volumeControll");
+    slider.oninput = function() {
+    }
+
+    window.onload = playSong();   // it will call the function playSong when window is load
+
+    //Volume
+    function SetVolume(val)
+    {
+        console.log('Before: ' + player.volume);
+        song.volume = val / 100;
+        console.log('After: ' + player.volume);
+    }
+
+    function playSong(){  
+        song.src = songs[currentSong];
+        songTitle.textContent = songs[currentSong];
+    }
+
+    function playOrPauseSong(){
+
+        var play = document.getElementById("play");
+
+        if(song.paused){
+            song.play();
+            play.innerHTML='<i class="fa fa-play PlayMusicButton">';
+        }
+        else{
+            song.pause();
+            play.innerHTML='<i class="fa fa-pause PlayMusicButton">';
+        }
+    }
+        
+    song.addEventListener('timeupdate',function(){ 
+            
+        var position = song.currentTime / song.duration;
+            
+        fillBar.style.width = position * 100 + '%';
+
+        convertTime(Math.round(song.currentTime));
+
+        if (song.ended) {
+            next();
+        }
+    });
+
+    function convertTime(seconds) {
+        var min = Math.floor(seconds / 60);
+        var sec = seconds % 60;
+
+        min = (min < 10) ? "0" + min : min;
+        sec = (sec < 10) ? "0" + sec : sec;
+        currentTime.textContent = min + ":" + sec;
+
+        totalTime(Math.round(song.duration));
+    }
+
+    function totalTime(seconds) {
+        var min = Math.floor(seconds / 60);
+        var sec = seconds % 60;
+
+        min = (min < 10) ? "0" + min : min;
+        sec = (sec < 10) ? "0" + sec : sec;
+        currentTime.textContent += "/" + min + ":" + sec;
+    }
+    
+    function next(){
+            
+        currentSong++;
+        if(currentSong > 2){
+            currentSong = 0;
+        }
+        playSong();
+        $("#play img").attr("src","Pause.png");
+        $("#image img").attr("src",poster[currentSong]);
+        $("#bg img").attr("src",poster[currentSong]);
+    }
+    
+    function pre(){
+            
+        currentSong--;
+        if(currentSong < 0){
+            currentSong = 2;
+        }
+        playSong();
+        $("#play img").attr("src","Pause.png");
+        $("#image img").attr("src",poster[currentSong]);
+        $("#bg img").attr("src",poster[currentSong]);
+    }
+</script>
+
 </html>

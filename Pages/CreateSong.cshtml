@@ -32,7 +32,8 @@
                     dr[0] = Request.Form["id"];
                     dr[1] = Request.Form["artist"];
                     dr[2] = Request.Form["title"];
-                    dr[3] = Request.Form["fileLocation"];
+                    dr[3] = Request.Form["cover"];
+                    dr[4] = Request.Form["fileLocation"];
 
                     mySongMethods.CreateSong(dr, file);
                     <div id='accountSuccess'>
@@ -51,6 +52,9 @@
                 </div>
                 <div class="accountInputContainer">
                     <i class="fa fa-user accountIcon"></i><input class="InputBox" type="text" placeholder="Artiest" name="artist" />
+                </div>
+                <div class="accountInputContainer">
+                    <i class="fa fa-file accountIcon"></i><input class="InputBox" type="text" placeholder="Cover foto" name="cover" />
                 </div>
                 <div class="accountInputContainer">
                     <i class="fa fa-file accountIcon"></i><input class="InputBox" type="text" placeholder="Bestand locatie" name="fileLocation" />

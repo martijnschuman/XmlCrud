@@ -4,18 +4,14 @@
     <id>1</id>
     <artist>Artiest1</artist>
     <title>Title1</title>
+    <cover>cover1</cover>
     <fileLocation>Locatie1</fileLocation>
   </songs>
   <songs>
     <id>2</id>
     <artist>Trekker</artist>
     <title>YesBlyaty</title>
+    <cover>YesBlyaty</cover>
     <fileLocation>sadasd.mp3</fileLocation>
-  </songs>
-  <songs>
-    <id />
-    <artist />
-    <title />
-    <fileLocation />
   </songs>
 </playlist>

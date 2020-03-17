@@ -105,7 +105,7 @@
     <Content Include="Images\Achtergrond.jpg" />
     <Content Include="Images\icon.ico" />
     <Content Include="Images\Songs\Song1.jpg" />
-    <Content Include="Pages\Song1.mp3" />
+    <Content Include="Pages\Songs\Song1.mp3" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
@@ -134,6 +134,8 @@
     <Content Include="CSS\Fonts\Roboto_Mono\RobotoMono-Thin.ttf" />
     <Content Include="CSS\Fonts\Roboto_Mono\RobotoMono-ThinItalic.ttf" />
     <Content Include="Pages\PlaySong.cshtml" />
+    <Content Include="Pages\Songs\Song2.mp3" />
+    <Content Include="Pages\upload.inc.php" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>

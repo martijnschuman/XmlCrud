@@ -32,7 +32,7 @@
 
     @if (IsPost)
     {
-        if (Request.Form["keuze"] == "ja")
+        if (Request.Form["DeleteSong"] == "ja")
         {
             string id = Request.QueryString["id"];
             mySongMethods.DeleteSong(id, file);

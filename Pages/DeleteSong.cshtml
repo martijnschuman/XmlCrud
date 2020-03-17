@@ -29,5 +29,18 @@
             <input type="submit" value="Verder" />
         </form>
     </div>
+
+    @if (IsPost)
+    {
+        if (Request.Form["keuze"] == "ja")
+        {
+            string id = Request.QueryString["id"];
+            mySongMethods.DeleteSong(id, file);
+        }
+
+        Response.Redirect(@"~/index.cshtml");
+    }
+
+
 </body>
 </html>

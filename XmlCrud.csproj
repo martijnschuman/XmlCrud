@@ -135,7 +135,6 @@
     <Content Include="CSS\Fonts\Roboto_Mono\RobotoMono-ThinItalic.ttf" />
     <Content Include="Pages\PlaySong.cshtml" />
     <Content Include="Pages\Songs\Song2.mp3" />
-    <Content Include="Pages\upload.inc.php" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -146,6 +145,8 @@
   <ItemGroup>
     <Content Include="index.cshtml" />
     <None Include="packages.config" />
+    <Content Include="Shared\_Header.cshtml" />
+    <Content Include="Shared\_Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -153,9 +154,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="uploads\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>

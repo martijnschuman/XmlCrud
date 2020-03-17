@@ -11,15 +11,7 @@
 }
 
 <html>
-<head>
-    <title>PlayMusic</title>
-    <link rel="stylesheet" href="~/CSS/account.css" />
-    <link rel="stylesheet" href="~/CSS/fonts.css" />
-    <link rel="stylesheet" href="~/CSS/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="~/Images/icon.ico" type="image/x-icon">
-    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
-</head>
+@RenderPage("~/Shared/_Header.cshtml")
 <body>
     <div id="PlayDiv">
         <img id="image" src="~/Images/Songs/Song1.jpg" />
@@ -47,9 +39,9 @@
 
 <script type="text/javascript">
 
-    var songs = ["Songs/Song1.mp3","Songs/Song2.mp3","Songs/Song3.mp3"];
-    var poster = ["Poster1.jpg","Poster2.jpg","Poster3.jpg"];
-        
+    var songs = ["Songs/Song1.mp3", "Songs/Song2.mp3", "Songs/Song3.mp3"];
+    var poster = ["Poster1.jpg", "Poster2.jpg", "Poster3.jpg"];
+
     var songTitle = document.getElementById("songTitle");
     var fillBar = document.getElementById("fill");
 
@@ -59,42 +51,41 @@
     var currentSong = 0;
 
     var slider = document.getElementById("volumeControll");
-    slider.oninput = function() {
+    slider.oninput = function () {
     }
 
     window.onload = playSong();   // it will call the function playSong when window is load
 
     //Volume
-    function SetVolume(val)
-    {
+    function SetVolume(val) {
         console.log('Before: ' + player.volume);
         song.volume = val / 100;
         console.log('After: ' + player.volume);
     }
 
-    function playSong(){  
+    function playSong() {
         song.src = songs[currentSong];
         songTitle.textContent = songs[currentSong];
     }
 
-    function playOrPauseSong(){
+    function playOrPauseSong() {
 
         var play = document.getElementById("play");
 
-        if(song.paused){
+        if (song.paused) {
             song.play();
-            play.innerHTML='<i class="fa fa-play PlayMusicButton">';
+            play.innerHTML = '<i class="fa fa-play PlayMusicButton">';
         }
-        else{
+        else {
             song.pause();
-            play.innerHTML='<i class="fa fa-pause PlayMusicButton">';
+            play.innerHTML = '<i class="fa fa-pause PlayMusicButton">';
         }
     }
-        
-    song.addEventListener('timeupdate',function(){ 
-            
+
+    song.addEventListener('timeupdate', function () {
+
         var position = song.currentTime / song.duration;
-            
+
         fillBar.style.width = position * 100 + '%';
 
         convertTime(Math.round(song.currentTime));
@@ -123,30 +114,30 @@
         sec = (sec < 10) ? "0" + sec : sec;
         currentTime.textContent += "/" + min + ":" + sec;
     }
-    
-    function next(){
-            
+
+    function next() {
+
         currentSong++;
-        if(currentSong > 2){
+        if (currentSong > 2) {
             currentSong = 0;
         }
         playSong();
-        $("#play img").attr("src","Pause.png");
-        $("#image img").attr("src",poster[currentSong]);
-        $("#bg img").attr("src",poster[currentSong]);
+        $("#play img").attr("src", "Pause.png");
+        $("#image img").attr("src", poster[currentSong]);
+        $("#bg img").attr("src", poster[currentSong]);
     }
-    
-    function pre(){
-            
+
+    function pre() {
+
         currentSong--;
-        if(currentSong < 0){
+        if (currentSong < 0) {
             currentSong = 2;
         }
         playSong();
-        $("#play img").attr("src","Pause.png");
-        $("#image img").attr("src",poster[currentSong]);
-        $("#bg img").attr("src",poster[currentSong]);
+        $("#play img").attr("src", "Pause.png");
+        $("#image img").attr("src", poster[currentSong]);
+        $("#bg img").attr("src", poster[currentSong]);
     }
 </script>
-
+@RenderPage("~/Shared/_Footer.cshtml")
 </html>

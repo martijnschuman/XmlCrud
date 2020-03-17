@@ -11,14 +11,7 @@
 }
 
 <html>
-<head>
-    <title>PlayMusic</title>
-    <link rel="stylesheet" href="~/CSS/account.css" />
-    <link rel="stylesheet" href="~/CSS/fonts.css" />
-    <link rel="stylesheet" href="~/CSS/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="~/Images/icon.ico" type="image/x-icon">
-</head>
+@RenderPage("~/Shared/_Header.cshtml")
 <body>
     <div>
         <p>Weet u zeker dat u deze song wilt verwijderen?</p>
@@ -41,6 +34,6 @@
         Response.Redirect(@"~/index.cshtml");
     }
 
-
 </body>
+@RenderPage("~/Shared/_Footer.cshtml")
 </html>

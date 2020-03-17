@@ -14,9 +14,9 @@
 <body>
     <div>
         <form method="post">
-            <div class="accountDiv">
-                <p id="accountTitle">PlayMusic</p>
-                <p id="accountSubTitle">Nieuw nummer toevoegen</p>
+            <div class="formDiv">
+                <p id="formTitle">PlayMusic</p>
+                <p id="formSubTitle">Nieuw nummer toevoegen</p>
 
                 @if (IsPost)
                 {
@@ -29,7 +29,7 @@
                     dr[4] = Request.Form["fileLocation"];
 
                     mySongMethods.CreateSong(dr, file);
-                    <div id='accountSuccess'>
+                    <div id='formSuccess'>
                         <p>Nummer succesvol toegevoegd.</p>
                         <p>U wordt automatisch terug gestuurd naar de home pagina.</p>
                     </div>
@@ -37,20 +37,20 @@
                     //Pagina 16
                 }
 
-                <div class="accountInputContainer">
-                    <i class="fa fa-id-card accountIcon"></i><input class="InputBox" type="text" placeholder="ID" name="id" />
+                <div class="formInputContainer">
+                    <i class="fa fa-id-card formIcon"></i><input class="InputBox" type="text" placeholder="ID" name="id" />
                 </div>
-                <div class="accountInputContainer">
-                    <i class="fa fa-music accountIcon"></i><input class="InputBox" type="text" placeholder="Title" name="title" />
+                <div class="formInputContainer">
+                    <i class="fa fa-music formIcon"></i><input class="InputBox" type="text" placeholder="Title" name="title" />
                 </div>
-                <div class="accountInputContainer">
-                    <i class="fa fa-user accountIcon"></i><input class="InputBox" type="text" placeholder="Artiest" name="artist" />
+                <div class="formInputContainer">
+                    <i class="fa fa-user formIcon"></i><input class="InputBox" type="text" placeholder="Artiest" name="artist" />
                 </div>
-                <div class="accountInputContainer">
-                    <i class="fa fa-file accountIcon"></i><input class="InputBox" type="text" placeholder="Cover foto" name="cover" />
+                <div class="formInputContainer">
+                    <i class="fa fa-file formIcon"></i><input class="InputBox" type="text" placeholder="Cover foto" name="cover" />
                 </div>
-                <div class="accountInputContainer">
-                    <i class="fa fa-file accountIcon"></i><input class="InputBox" type="text" placeholder="Bestand locatie" name="fileLocation" />
+                <div class="formInputContainer">
+                    <i class="fa fa-file formIcon"></i><input class="InputBox" type="text" placeholder="Bestand locatie" name="fileLocation" />
                 </div>
                 <input type="submit" class="submit" id="accountSubmit" value="Nummer toevoegen" />
             </div>

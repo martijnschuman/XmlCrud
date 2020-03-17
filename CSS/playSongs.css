@@ -1,0 +1,101 @@
+﻿/*Music player*/
+#PlayDiv {
+    width: 450px;
+    margin: 0 auto;
+    background-color: white;
+    position: relative;
+    top: 100px;
+    border-radius: var(--border-radius);
+    color: black;
+}
+
+/*Cover van het nummer*/
+#image {
+    width: 100%;
+    height: 300px;
+    border-radius: var(--border-radius);
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+/*Opmaak van de title van het nummer*/
+#songTitle {
+    text-align: center;
+    font-family: BioRhyme-Regular;
+    font-size: 20px;
+    margin-top: -4px;
+    margin-bottom: 5px;
+}
+
+/*vorige/pauzeer/volgende nummer in het midden*/
+#buttons {
+    text-align: center;
+}
+
+/*Opmaak van de vorige/pauzeer/volgende nummer*/
+.PlayMusicButton {
+    transition: all .25s ease-in-out;
+    font-size: 30px !important;
+}
+
+    .PlayMusicButton:hover {
+        transform: scale(1.1);
+    }
+
+/*Progress bar van de tijd van het nummer*/
+#seek-bar {
+    width: 400px;
+    margin: 0 auto;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+}
+/*De blauw balk van de progres*/
+#fill {
+    height: 10px;
+    width: 0%;
+    background-color: royalblue;
+    border-radius: 20px;
+}
+/*Rond eind van de balk*/
+#handle {
+    width: 8px;
+    height: 8px;
+    background-color: royalblue;
+    border-radius: 50%;
+    margin-left: -5px;
+    transform: scale(2);
+}
+
+/*Huidige tijd van het nummer*/
+#currentTime {
+    font-family: BioRhyme-Regular;
+    margin-left: 25px;
+    margin-bottom: 5px;
+}
+
+/*Opmaak van de volume slider*/
+.volumeSlider {
+    -webkit-appearance: none;
+    height: 10px;
+    background-color: gray;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: absolute;
+    right: 25px;
+    bottom: 45px;
+}
+
+    .volumeSlider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 8px;
+        height: 8px;
+        background-color: royalblue;
+        border-radius: 50%;
+        transform: scale(2);
+        cursor: pointer;
+    }

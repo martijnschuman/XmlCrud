@@ -1,4 +1,4 @@
-﻿html {
+﻿html, body {
     font-family: Arial;
     margin: 0px;
     padding: 0px;
@@ -30,6 +30,56 @@ a:link, a:visited, a:hover, a:active {
     --transform: scale(1.05);
     --transition: all .15s ease-in-out;
     --border-radius: 15px;
+}
+
+/*Div met een form*/
+.formDiv {
+    width: 350px;
+    position: relative;
+    top: 250px;
+    margin: 0 auto;
+}
+
+/*Groote title*/
+#formTitle {
+    color: white;
+    position: relative;
+    top: 10px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 0px;
+    font-family: BioRhyme-Regular;
+}
+
+/*Kleine title*/
+#formSubTitle {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+/*Animatie van de input velden+icoon*/
+.formInputContainer {
+    transition: var(--transition);
+}
+
+    .formInputContainer:hover {
+        transform: var(--transform);
+    }
+
+/*Icoon voor input veld*/
+.formIcon {
+    padding: 7px 10px 10px;
+    background: gray;
+    color: white;
+    width: 19px;
+    text-align: center;
+}
+
+.fa {
+    font-size: 20px !important;
 }
 
 /*Input veld*/
@@ -85,106 +135,41 @@ a:link, a:visited, a:hover, a:active {
     color: rgb(196, 196, 196) !important;
 }
 
-/*Music player*/
-#PlayDiv{
-    width: 450px;
-    margin: 0 auto;
-    background-color: white;
-    position: relative;
-    top: 100px;
-    border-radius: var(--border-radius);
-    color: black;
-}
-
-/*Cover van het nummer*/
-#image {
-    width: 100%;
-    height: 300px;
-    border-radius: var(--border-radius);
-    border-bottom-left-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
-}
-
-/*Opmaak van de title van het nummer*/
-#songTitle {
+/*Login/signup error message*/
+#formError {
     text-align: center;
-    font-family: BioRhyme-Regular;
-    font-size: 20px;
-    margin-top: -4px;
-    margin-bottom: 5px;
+    color: white;
+    background-color: rgba(255, 45, 45, 0.8);
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 3px solid darkred;
+    border-radius: 10px;
 }
 
-/*vorige/pauzeer/volgende nummer in het midden*/
-#buttons {
+#formSuccess {
     text-align: center;
+    color: white;
+    background-color: rgba(0, 255, 0, 0.8);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 3px solid darkgreen;
+    border-radius: 10px;
 }
 
-/*Opmaak van de vorige/pauzeer/volgende nummer*/
-.PlayMusicButton {
-    transition: all .25s ease-in-out;
-    font-size: 30px !important;
-}
-
-    .PlayMusicButton:hover {
-        transform: scale(1.1);
-    }
-
-/*Progress bar van de tijd van het nummer*/
-#seek-bar {
-    width: 400px;
-    margin: 0 auto;
-    height: 10px;
-    background-color: gray;
-    border-radius: 50px;
-    cursor: pointer;
-    display: flex;
-    
-}
-/*De blauw balk van de progres*/
-#fill{
-    height: 10px;
-    width: 0%;
-    background-color: royalblue;
-    border-radius: 20px;
-}
-/*Rond eind van de balk*/
-#handle{
-    width: 8px;
-    height: 8px;
-    background-color: royalblue;
-    border-radius: 50%;
-    margin-left: -5px;
-    transform: scale(2);
-}
-
-/*Huidige tijd van het nummer*/
-#currentTime {
-    font-family: BioRhyme-Regular;
-    margin-left: 25px;
-    margin-bottom: 5px;
-}
-
-/*Opmaak van de volume slider*/
-.volumeSlider {
-    -webkit-appearance: none;
-    height: 10px;
-    background-color: gray;
-    outline: none;
-    border-radius: 50px;
-    cursor: pointer;
+.footer {
     position: absolute;
-    right: 25px;
-    bottom: 45px;
+    width: 100%;
+    bottom: 0px;
+    background-color: rgba(58, 59, 58, 0.8);
+    margin: 0 auto;
 }
 
-    .volumeSlider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 8px;
-        height: 8px;
-        background-color: royalblue;
-        border-radius: 50%;
-        transform: scale(2);
-        cursor: pointer;
-    }
-
+.footerTekst {
+    font-family: Mangal;
+    position: relative;
+    bottom: 0px;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}

@@ -1,6 +1,6 @@
-﻿/*Signin check voor signup*/
+/*Signin check voor signup*/
 /*Achtergrond*/
-.overlay {
+.overlay{
     position: fixed;
     width: 100%;
     height: 100%;
@@ -13,7 +13,7 @@
 }
 
 /*Div met tekst/knoppen*/
-.signinCheck {
+.signinCheck{
     width: 550px;
     height: 130px;
     position: relative;
@@ -25,104 +25,65 @@
 }
 
 /*Title*/
-#signinCheckTitle {
+#signinCheckTitle{
     color: red;
 }
 
 /*Tekst*/
-#signinCheckTekst {
+#signinCheckTekst{
     color: white;
 }
 
-:root {
+:root{
     --signinCheckLogoutBottom: 10px;
 }
 
 /*Uitloggen knop*/
-#signinCheckLogout {
+#signinCheckLogout{
     position: absolute;
     left: 125px;
     bottom: var(--signinCheckLogoutBottom);
 }
 
 /*Vorige pagina knop*/
-#signinCheckLastPage {
+#signinCheckLastPage{
     position: absolute;
     left: 235px;
     bottom: var(--signinCheckLogoutBottom);
 }
 
-/*Div met het login/signup form*/
-.accountDiv {
-    width: 350px;
-    position: relative;
-    top: 250px;
-    margin: 0 auto;
-}
-
-/*Groote title*/
-#accountTitle {
-    color: white;
-    position: relative;
-    top: 10px;
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 0px;
-    font-family: BioRhyme-Regular;
-}
-
-/*Kleine title*/
-#accountSubTitle {
-    color: white;
-    text-align: center;
-    font-size: 18px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
 /*Login/signup error message*/
-#accountError {
+#accountError{
     text-align: center;
     color: white;
     background-color: rgba(255, 45, 45, 0.8);
     padding: 10px;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-style: 16px;
     border: 3px solid darkred;
     border-radius: 10px;
 }
 
-/*Animatie van de input velden+icoon*/
-.accountInputContainer {
-    transition: var(--transition);
-}
 
-    .accountInputContainer:hover {
-        transform: var(--transform);
-    }
 
-/*Icoon voor input veld*/
-.accountIcon {
-    padding: 7px 10px 10px;
-    background: gray;
-    color: white;
-    width: 19px;
-    text-align: center;
-}
-
-.fa {
-    font-size: 20px !important;
+/*Input veld*/
+.accountInputBox{
+	width: 88.6%;
+    padding: 12 10 10;
+	margin: 0px 0px 10px 0px;
+	display: inline-block;
+    border: none; 
 }
 
 /*Positie login/signup submit knop*/
-#accountSubmit {
+#accountSubmit{
     margin: 0 auto;
 }
 
 /*Login*/
 /***************************************************************************************************************************************************************************/
 /*Opmaak van de wachtwoord reset link*/
-#wachtwoordResetLink {
+#wachtwoordResetLink{
     position: relative;
     left: 56%;
     margin-top: -25px;
@@ -131,7 +92,7 @@
 /*Signup*/
 /***************************************************************************************************************************************************************************/
 /*Link naar de login pagina mocht er nog een account zijn.*/
-#signupLoginLink {
+#signupLoginLink{
     position: relative;
     left: 82%;
 }
@@ -139,23 +100,24 @@
 /*PWD reset*/
 /***************************************************************************************************************************************************************************/
 /*Tekst op de pagina*/
-#accountPwdResetTekst {
+#accountPwdResetTekst{
     color: white;
     text-align: center;
 }
 
-#accountSuccess {
+#accountSuccess{
     text-align: center;
     color: white;
     background-color: rgba(0, 255, 0, 0.8);
     padding: 10px;
     margin-bottom: 10px;
+    font-style: 16px;
     border: 3px solid darkgreen;
     border-radius: 10px;
 }
 
 /*Error message wanneer er geen validater/token aanwezig zijn*/
-#accountPwdRestError {
+#accountPwdRestError{
     color: red;
     text-align: center;
     font-size: 18px;

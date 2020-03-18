@@ -1,2 +1,17 @@
 <?xml version="1.0" standalone="yes"?>
-<playlist />
+<playlist>
+  <songs>
+    <id>1</id>
+    <artist>Trekker</artist>
+    <title>Deltion LAN 2020</title>
+    <cover>YEEEEEEEEET</cover>
+    <fileLocation>asdasdasdasdsa.mp3</fileLocation>
+  </songs>
+  <songs>
+    <id>3</id>
+    <artist>PoahDasEenMooiDing</artist>
+    <title>Geweldige title2</title>
+    <cover>YEEEEEEEEET</cover>
+    <fileLocation>asdasdasdasdsa.mp3</fileLocation>
+  </songs>
+</playlist>

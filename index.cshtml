@@ -11,12 +11,17 @@
     Session["playlistClass"] = mySongMethods;
     Session["file"] = file;
     //Pagina 13
+
+    int currenID = ds.Tables["songs"].Rows.Count;
+    Session["nextID"] = currenID + 1;
 }
 
 <html>
 @RenderPage("~/Shared/_Header.cshtml")
 <body>
     @RenderPage("~/Pages/DeleteSong.cshtml")
+
+    <p>@Session["currenID"]</p>
 
     <table>
         <tr>

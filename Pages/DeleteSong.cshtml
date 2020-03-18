@@ -1,39 +1,34 @@
-﻿<!DOCTYPE html>
-
-@using System.Data;
+﻿@using System.Data;
 @using XmlCrud.App_Code;
 
 @{
     SongMethods mySongMethods = Session["playlistClass"] as SongMethods;
     string file = Session["file"] as string;
-
-    //Pagina 17
 }
 
-<html>
-@RenderPage("~/Shared/_Header.cshtml")
-<body>
-    <div>
-        <p>Weet u zeker dat u deze song wilt verwijderen?</p>
-        <form method="post">
-            Ja <input type="radio" name="DeleteSong" value="ja" />
-            Nee <input type="radio" name="DeleteSong" value="Nee" />
+<div id="overlay"></div>
+<div id="divBox" class="divBox">
+    <i onclick="closeOverlay()" id="close" class="fa fa-times-circle"></i>
 
-            <input type="submit" value="Verder" />
-        </form>
-    </div>
+    <p id="DeleteSongWarning">LET OP!</p>
+    <br />
+    <p>Weet u zeker dat u dit nummer wil verwijderen?</p>
+    <p>Dit kan <u>niet</u> ongedaan gemaakt worden</p>
+    <form id="DeleteSong" method="post">
+        Ja <input type="radio" name="DeleteSong" value="ja" />
+        Nee <input type="radio" name="DeleteSong" value="Nee" checked="checked"/>
+        <input type="hidden" name="DeleteSongId" id="DeleteSongHiddenInput" value=""/>
+        <input type="submit" class="submit" id="DeleteSongSubmit" value="Verder" />
+    </form>
+</div>
 
-    @if (IsPost)
+@if (IsPost)
+{
+    if (Request.Form["DeleteSong"] == "ja")
     {
-        if (Request.Form["DeleteSong"] == "ja")
-        {
-            string id = Request.QueryString["id"];
-            mySongMethods.DeleteSong(id, file);
-        }
-
-        Response.Redirect(@"~/index.cshtml");
+        string id = Request.Form["DeleteSongId"];
+        mySongMethods.DeleteSong(id, file);
     }
 
-</body>
-@RenderPage("~/Shared/_Footer.cshtml")
-</html>
+    Response.Redirect(@"~/index.cshtml");
+}

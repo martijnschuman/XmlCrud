@@ -1,10 +1,2 @@
 <?xml version="1.0" standalone="yes"?>
-<playlist>
-  <songs>
-    <id>9</id>
-    <artist>Ons</artist>
-    <title>Geweldige title</title>
-    <cover>fotos/id9</cover>
-    <fileLocation>nummer/nummer9</fileLocation>
-  </songs>
-</playlist>
+<playlist />

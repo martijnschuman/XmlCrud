@@ -16,6 +16,8 @@
 <html>
 @RenderPage("~/Shared/_Header.cshtml")
 <body>
+    @RenderPage("~/Pages/DeleteSong.cshtml")
+
     <table>
         <tr>
             <td>ID</td>
@@ -34,12 +36,12 @@
                 <td>@dr["title"]</td>
                 <td>@dr["cover"]</td>
                 <td>@dr["fileLocation"]</td>
-                <td><a href="~/Pages/DeleteSong.cshtml?id=@dr["id"]"><i class="fa fa-trash accountIcon"></i></a></td>
+                <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash accountIcon"></i></a></td>
                 <td><a href="~/Pages/EditSong.cshtml?id=@dr["id"]"><i class="fa fa-edit accountIcon"></i></a></td>
             </tr>
             //Pagina 11
             //Regel 39 pagina 18
-        }
+}
     </table>
     <a href="~/Pages/CreateSong.cshtml">Create Songs</a>
     <a href="~/Pages/PlaySong.cshtml">Play Songs</a>

@@ -2,23 +2,30 @@
 <playlist>
   <songs>
     <id>1</id>
-    <artist>Artist1</artist>
     <title>Title1</title>
+    <artist>Artist1</artist>
     <cover>https://i.pinimg.com/originals/b4/75/00/b4750046d94fed05d00dd849aa5f0ab7.jpg</cover>
     <fileLocation>Nummer1.mp3</fileLocation>
   </songs>
   <songs>
     <id>2</id>
-    <artist>Artist2</artist>
     <title>Title2</title>
+    <artist>Artist2</artist>
     <cover>https://i.pinimg.com/originals/b4/75/00/b4750046d94fed05d00dd849aa5f0ab7.jpg</cover>
     <fileLocation>Nummer2.mp3</fileLocation>
   </songs>
   <songs>
     <id>3</id>
-    <artist>Artist3</artist>
     <title>Title3</title>
+    <artist>Artist3</artist>
     <cover>https://i.pinimg.com/originals/b4/75/00/b4750046d94fed05d00dd849aa5f0ab7.jpg</cover>
     <fileLocation>Nummer3.mp3</fileLocation>
+  </songs>
+  <songs>
+    <id>4</id>
+    <title>Title4</title>
+    <artist>Artist4</artist>
+    <cover>https://i.pinimg.com/originals/b4/75/00/b4750046d94fed05d00dd849aa5f0ab7.jpg</cover>
+    <fileLocation>Nummer4.mp3</fileLocation>
   </songs>
 </playlist>

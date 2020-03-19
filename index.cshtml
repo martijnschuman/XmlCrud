@@ -12,8 +12,8 @@
     Session["file"] = file;
     //Pagina 13
 
-    int currenID = ds.Tables["songs"].Rows.Count;
-    Session["nextID"] = currenID + 1;
+    int currentID = ds.Tables["songs"].Rows.Count;
+    Session["nextID"] = currentID + 1;
 }
 
 <html>
@@ -21,32 +21,40 @@
 <body>
     @RenderPage("~/Pages/DeleteSong.cshtml")
 
-    <p>@Session["currenID"]</p>
-
+    <script src="~/Scripts/MusicPlayer.js"></script>
     <table>
         <tr>
+            <td class="TableEmptyTD"></td>
             <td>ID</td>
+            <td class="tableTitle">Title</td>
             <td>Artiest</td>
-            <td>Title</td>
+
             <td>Cover foto</td>
+            <td>Cover foto link</td>
             <td>Bestand locatie</td>
-            <td>Verwijder nummer</td>
-            <td>Nummer bewerken</td>
+            <td>Verwijderen</td>
+            <td>Bewerken</td>
+            <td class="TableEmptyTD"></td>
         </tr>
         @foreach (DataRow dr in ds.Tables["songs"].Rows)
         {
-            <tr>
+            <tr><th colspan="9" class="bordered"></th></tr>
+            <tr class="playListRow" onclick="ShowMusicPlayer('@dr["title"], @dr["cover"], @dr["artist"] ,@dr["fileLocation"]')">
+                <td class="TableEmptyTD"></td>
                 <td>@dr["id"]</td>
+                <td class="tableTitle">@dr["title"]</td>
                 <td>@dr["artist"]</td>
-                <td>@dr["title"]</td>
+                <td><img src="@dr["cover"]" class="songCoverImage" /></td>
                 <td>@dr["cover"]</td>
                 <td>@dr["fileLocation"]</td>
                 <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash accountIcon"></i></a></td>
                 <td><a href="~/Pages/EditSong.cshtml?id=@dr["id"]"><i class="fa fa-edit accountIcon"></i></a></td>
+                <td class="TableEmptyTD"></td>
             </tr>
             //Pagina 11
             //Regel 39 pagina 18
-}
+
+        }
     </table>
     <a href="~/Pages/CreateSong.cshtml">Create Songs</a>
     <a href="~/Pages/PlaySong.cshtml">Play Songs</a>

@@ -2,16 +2,23 @@
 <playlist>
   <songs>
     <id>1</id>
-    <artist>Trekker</artist>
-    <title>Deltion LAN 2020</title>
-    <cover>YEEEEEEEEET</cover>
-    <fileLocation>asdasdasdasdsa.mp3</fileLocation>
+    <artist>Artist1</artist>
+    <title>Title1</title>
+    <cover>https://i.pinimg.com/originals/b4/75/00/b4750046d94fed05d00dd849aa5f0ab7.jpg</cover>
+    <fileLocation>Nummer1.mp3</fileLocation>
+  </songs>
+  <songs>
+    <id>2</id>
+    <artist>Artist2</artist>
+    <title>Title2</title>
+    <cover>https://i.pinimg.com/originals/b4/75/00/b4750046d94fed05d00dd849aa5f0ab7.jpg</cover>
+    <fileLocation>Nummer2.mp3</fileLocation>
   </songs>
   <songs>
     <id>3</id>
-    <artist>PoahDasEenMooiDing</artist>
-    <title>Geweldige title2</title>
-    <cover>YEEEEEEEEET</cover>
-    <fileLocation>asdasdasdasdsa.mp3</fileLocation>
+    <artist>Artist3</artist>
+    <title>Title3</title>
+    <cover>https://i.pinimg.com/originals/b4/75/00/b4750046d94fed05d00dd849aa5f0ab7.jpg</cover>
+    <fileLocation>Nummer3.mp3</fileLocation>
   </songs>
 </playlist>

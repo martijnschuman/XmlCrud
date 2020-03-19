@@ -100,12 +100,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CSS\DeleteSong.css" />
+    <Content Include="CSS\SongInfo.css" />
     <Content Include="CSS\style.css" />
     <Content Include="CSS\fonts.css" />
     <Content Include="CSS\PlaySongs.css" />
     <Content Include="Images\Achtergrond.jpg" />
     <Content Include="Images\icon.ico" />
-    <Content Include="Images\Songs\Song1.jpg" />
     <Content Include="Pages\Songs\Song1.mp3" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
@@ -138,6 +138,7 @@
     <Content Include="Pages\Songs\Song2.mp3" />
     <Content Include="Scripts\DeleteSong.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\MusicPlayer.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

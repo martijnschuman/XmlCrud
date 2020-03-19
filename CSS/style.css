@@ -158,6 +158,10 @@ a:link, a:visited, a:hover, a:active {
     border-radius: 10px;
 }
 
+.playListRow {
+    margin-left: 0px;
+    margin-right: 0px;
+}
 /*Footer opmaak*/
 .footer {
     position: absolute;
@@ -174,4 +178,20 @@ a:link, a:visited, a:hover, a:active {
     font-size: 15px;
     color: white;
     text-align: center;
+}
+
+table {
+    border-spacing: 1px;
+}
+
+th.bordered {
+    background-image: linear-gradient(to left, rgba(128,128,128,0), rgba(128,128,128,1));
+}
+
+.tableTitle{
+    width: 200px;
+}
+
+.TableEmptyTD{
+    width: 20px;
 }

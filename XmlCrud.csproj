@@ -100,7 +100,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CSS\DeleteSong.css" />
-    <Content Include="CSS\SongInfo.css" />
+    <Content Include="CSS\PlayList.css" />
     <Content Include="CSS\style.css" />
     <Content Include="CSS\fonts.css" />
     <Content Include="CSS\PlaySongs.css" />

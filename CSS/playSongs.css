@@ -1,41 +1,49 @@
-﻿/*Music player*/
-#PlayDiv {
-    width: 450px;
-    margin: 0 auto;
-    background-color: white;
-    position: relative;
-    top: 100px;
-    border-radius: var(--border-radius);
-    color: black;
-}
-
-/*Cover van het nummer*/
-#image {
+﻿.MusicPlayer {
+    background-color: rgba(58, 59, 58, 0.8);
     width: 100%;
-    height: 300px;
-    border-radius: var(--border-radius);
-    border-bottom-left-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
+    height: 95px;
+    position: absolute;
+    bottom: 0px;
 }
 
-/*Opmaak van de title van het nummer*/
-#songTitle {
-    text-align: center;
-    font-family: BioRhyme-Regular;
-    font-size: 20px;
-    margin-top: -4px;
-    margin-bottom: 5px;
+#songCoverImage {
+    position: absolute;
+    height: 100%;
+    z-index: 3;
+}
+
+.SongInfo {
+    position: absolute;
+    top: 10px;
+    left: 6%;
+}
+
+#MusicPlayerTitle {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#MusicPlayerArtist, #MusicPlayerAlbum {
+    color: rgb(192,192,192);
+    font-size: 16px;
 }
 
 /*vorige/pauzeer/volgende nummer in het midden*/
 #buttons {
-    text-align: center;
+    position: absolute;
+    left: Calc(50% - 68px);
+    margin-top: 5px;
+}
+
+#play{
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /*Opmaak van de vorige/pauzeer/volgende nummer*/
 .PlayMusicButton {
-    transition: all .25s ease-in-out;
-    font-size: 30px !important;
+    transition: all .1s ease-in-out;
+    font-size: 40px !important;
 }
 
     .PlayMusicButton:hover {
@@ -44,9 +52,9 @@
 
 /*Progress bar van de tijd van het nummer*/
 #seek-bar {
-    width: 400px;
-    margin: 0 auto;
-    height: 10px;
+    width: 31.25%;
+    margin: 52px auto 0px;
+    height: 11px;
     background-color: gray;
     border-radius: 50px;
     cursor: pointer;
@@ -54,28 +62,42 @@
 }
 /*De blauw balk van de progres*/
 #fill {
-    height: 10px;
+    height: 11px;
     width: 0%;
     background-color: royalblue;
     border-radius: 20px;
 }
 /*Rond eind van de balk*/
 #handle {
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
     background-color: royalblue;
     border-radius: 50%;
     margin-left: -5px;
     transform: scale(2);
 }
 
-/*Huidige tijd van het nummer*/
-#currentTime {
+/*Tijd van het nummer*/
+.MusicPlayerTime {
     font-family: BioRhyme-Regular;
-    margin-left: 25px;
-    margin-bottom: 5px;
+    position: absolute;
+    top: 44px;
+}
+/*Huidige tijd van het nummer*/
+#MusicPlayerCurrentTime {
+    left: 31%;
+}
+/*Max tijd van het nummer*/
+#MusicPlayerMaxTime {
+    left: 66%;
 }
 
+
+.MusicPlayerVolume {
+    position: absolute;
+    right: 170px;
+    bottom: 42px;
+}
 /*Opmaak van de volume slider*/
 .volumeSlider {
     -webkit-appearance: none;
@@ -85,8 +107,9 @@
     border-radius: 50px;
     cursor: pointer;
     position: absolute;
-    right: 25px;
+    right: 30px;
     bottom: 45px;
+    width: 130px;
 }
 
     .volumeSlider::-webkit-slider-thumb {

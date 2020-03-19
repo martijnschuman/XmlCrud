@@ -28,27 +28,27 @@
             <td>ID</td>
             <td class="tableTitle">Title</td>
             <td>Artiest</td>
+            <td>Album</td>
 
             <td>Cover foto</td>
             <td>Cover foto link</td>
             <td>Bestand locatie</td>
-            <td>Verwijderen</td>
-            <td>Bewerken</td>
             <td class="TableEmptyTD"></td>
         </tr>
         @foreach (DataRow dr in ds.Tables["songs"].Rows)
         {
             <tr><th colspan="9" class="bordered"></th></tr>
-            <tr class="playListRow" onclick="ShowMusicPlayer('@dr["title"], @dr["cover"], @dr["artist"] ,@dr["fileLocation"]')">
+            <tr class="playListRow" ondblclick="ShowMusicPlayer('@dr["title"]', '@dr["artist"]', '@dr["album"]', '@dr["cover"]', '@dr["fileLocation"]')">
                 <td class="TableEmptyTD"></td>
                 <td>@dr["id"]</td>
                 <td class="tableTitle">@dr["title"]</td>
                 <td>@dr["artist"]</td>
+                <td>@dr["album"]</td>
                 <td><img src="@dr["cover"]" class="songCoverImage" /></td>
                 <td>@dr["cover"]</td>
                 <td>@dr["fileLocation"]</td>
-                <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash accountIcon"></i></a></td>
-                <td><a href="~/Pages/EditSong.cshtml?id=@dr["id"]"><i class="fa fa-edit accountIcon"></i></a></td>
+                <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash playListIcon"></i></a></td>
+                <td><a href="~/Pages/EditSong.cshtml?id=@dr["id"]"><i class="fa fa-edit playListIcon"></i></a></td>
                 <td class="TableEmptyTD"></td>
             </tr>
             //Pagina 11
@@ -58,6 +58,37 @@
     </table>
     <a href="~/Pages/CreateSong.cshtml">Create Songs</a>
     <a href="~/Pages/PlaySong.cshtml">Play Songs</a>
+
+    <div class="MusicPlayer" id="MusicPlayer">
+
+        <img id="songCoverImage" src="" alt="SongCover"/>
+
+        <div class="SongInfo">
+            <div id="MusicPlayerTitle">*Title*</div>
+            <div id="MusicPlayerArtist">*Artiest*</div>
+            <div id="MusicPlayerAlbum">*Album*</div>
+        </div>
+
+        <div id="buttons">
+            <span title="Vorig nummer"><i onclick="pre()" id="pre" class="fa fa-arrow-left PlayMusicButton"></i></span>
+            <span title="Speel of pauzeer"><i onclick="playOrPauseSong()" id="play" class="fa fa-play PlayMusicButton"></i></span>
+            <span title="Volgend nummer"><i onclick="next()" id="next" class="fa fa-arrow-right PlayMusicButton"></i></span>
+        </div>
+
+        <div class="MusicPlayerTime" id="MusicPlayerCurrentTime">00:00</div>
+            <div id="seek-bar">
+                <div id="fill"></div>
+                <div id="handle"></div>
+            </div>
+        <div class="MusicPlayerTime" id="MusicPlayerMaxTime">00:00</div>
+
+        <span title="Volume">
+            <i class="fa fa-volume-up MusicPlayerVolume"></i>
+            <input type="range" min="1" max="100" value="75" class="volumeSlider" id="volumeControll" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)">
+        </span>
+
+    </div>
+
 </body>
 @RenderPage("~/Shared/_Footer.cshtml")
 </html>

@@ -1,0 +1,35 @@
+﻿<div class="MusicPlayer" id="MusicPlayer">
+
+    <img id="songCoverImage" src="" alt="SongCover" />
+
+    <div class="SongInfo">
+        <div id="MusicPlayerTitle">*Title*</div>
+        <div id="MusicPlayerArtist">*Artiest*</div>
+        <div id="MusicPlayerAlbum">*Album*</div>
+    </div>
+
+    <div id="buttons">
+        <span title="Vorig nummer"><i onclick="MusicPlayerPrevSong()" id="pre" class="fa fa-arrow-left PlayMusicButton"></i></span>
+        <span title="Speel of pauzeer"><i onclick="MusicPlayerPlayPause()" id="MusicPlayerPlay" class="fa fa-play PlayMusicButton"></i></span>
+        <span title="Volgend nummer"><i onclick="MusicPlayerNextSong()" id="next" class="fa fa-arrow-right PlayMusicButton"></i></span>
+    </div>
+
+    <div id="audio"></div>
+
+    <div class="MusicPlayerTime" id="MusicPlayerCurrentTime">00:00</div>
+    <div id="seek-bar">
+        <div id="fill"></div>
+        <div id="handle"></div>
+    </div>
+    <div class="MusicPlayerTime" id="MusicPlayerMaxTime">00:00</div>
+
+    <span title="Volume">
+        <i class="fa fa-volume-down MusicPlayerVolume" id="MusicPlayerVolumeMin"></i>
+        <input type="range" min="1" max="100" value="75" class="volumeSlider" id="volumeControll" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)">
+        <i class="fa fa-volume-up MusicPlayerVolume" id="MusicPlayerVolumeMax"></i>
+    </span>
+
+    <span title="Verberg muziek speler">
+        <i onclick="MusicPlayerClose()" class="fa fa-arrow-down MusicPlayerClose"></i>
+    </span>
+</div>

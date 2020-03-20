@@ -10,58 +10,56 @@
 }
 
 <html>
-<head>
-    <title>PlayMusic</title>
-    <link rel="stylesheet" href="~/CSS/account.css" />
-    <link rel="stylesheet" href="~/CSS/fonts.css" />
-    <link rel="stylesheet" href="~/CSS/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="~/Images/icon.ico" type="image/x-icon">
-</head>
+@RenderPage("~/Shared/_Header.cshtml")
 <body>
     <div>
         <form method="post">
-            <div class="accountDiv">
-                <p id="accountTitle">PlayMusic</p>
-                <p id="accountSubTitle">Nieuw nummer toevoegen</p>
+            <div class="formDiv">
+                <p id="formTitle">PlayMusic</p>
+                <p id="formSubTitle">Nieuw nummer toevoegen</p>
 
                 @if (IsPost)
                 {
                     DataRow dr = mySongMethods.GetEmptyDataRow();
 
                     dr[0] = Request.Form["id"];
-                    dr[1] = Request.Form["artist"];
-                    dr[2] = Request.Form["title"];
-                    dr[3] = Request.Form["cover"];
-                    dr[4] = Request.Form["fileLocation"];
+                    dr[1] = Request.Form["title"];
+                    dr[2] = Request.Form["artist"];
+                    dr[3] = Request.Form["album"];
+                    dr[4] = Request.Form["cover"];
+                    dr[5] = Request.Form["fileLocation"];
 
                     mySongMethods.CreateSong(dr, file);
-                    <div id='accountSuccess'>
+                    <div id='formSuccess'>
                         <p>Nummer succesvol toegevoegd.</p>
                         <p>U wordt automatisch terug gestuurd naar de home pagina.</p>
                     </div>
-                    Response.AddHeader("REFRESH", "8;URL=../index.cshtml");
+                    Response.AddHeader("REFRESH", "6;URL=../index.cshtml");
                     //Pagina 16
                 }
 
-                <div class="accountInputContainer">
-                    <i class="fa fa-id-card accountIcon"></i><input class="InputBox" type="text" placeholder="ID" name="id" />
+                <div class="formInputContainer">
+                    <i class="fa fa-id-card formIcon"></i><input class="InputBox" type="text" value="@Session["nextID"]" name="id" readonly/>
                 </div>
-                <div class="accountInputContainer">
-                    <i class="fa fa-music accountIcon"></i><input class="InputBox" type="text" placeholder="Title" name="title" />
+                <div class="formInputContainer">
+                    <i class="fa fa-music formIcon"></i><input class="InputBox" type="text" placeholder="Title" name="title" />
                 </div>
-                <div class="accountInputContainer">
-                    <i class="fa fa-user accountIcon"></i><input class="InputBox" type="text" placeholder="Artiest" name="artist" />
+                <div class="formInputContainer">
+                    <i class="fa fa-user formIcon"></i><input class="InputBox" type="text" placeholder="Artiest" name="artist" />
                 </div>
-                <div class="accountInputContainer">
-                    <i class="fa fa-file accountIcon"></i><input class="InputBox" type="text" placeholder="Cover foto" name="cover" />
+                <div class="formInputContainer">
+                    <i class="fa fa-music formIcon"></i><input class="InputBox" type="text" placeholder="Album" name="album" />
                 </div>
-                <div class="accountInputContainer">
-                    <i class="fa fa-file accountIcon"></i><input class="InputBox" type="text" placeholder="Bestand locatie" name="fileLocation" />
+                <div class="formInputContainer">
+                    <i class="fa fa-file formIcon"></i><input class="InputBox" type="text" placeholder="Cover foto" name="cover" />
+                </div>
+                <div class="formInputContainer">
+                    <i class="fa fa-file formIcon"></i><input class="InputBox" type="text" placeholder="Bestand locatie" name="fileLocation" />
                 </div>
                 <input type="submit" class="submit" id="accountSubmit" value="Nummer toevoegen" />
             </div>
         </form>
     </div>
 </body>
+@RenderPage("~/Shared/_Footer.cshtml")
 </html>

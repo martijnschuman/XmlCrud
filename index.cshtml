@@ -7,56 +7,62 @@
     SongMethods mySongMethods = new SongMethods();
     string file = @"~\App_Data\PlayList.xml";
     DataSet ds = mySongMethods.GetAllSongs(file);
-    //Pagina 10
     Session["playlistClass"] = mySongMethods;
     Session["file"] = file;
-    //Pagina 13
+
+    int currentID = ds.Tables["songs"].Rows.Count;
+    Session["nextID"] = currentID + 1;
 }
 
 <html>
-<head>
-    <title>PlayMusic</title>
-    <link rel="stylesheet" href="~/CSS/account.css" />
-    <link rel="stylesheet" href="~/CSS/fonts.css" />
-    <link rel="stylesheet" href="~/CSS/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="~/Images/icon.ico" type="image/x-icon">
-</head>
+@RenderPage("~/Shared/_Header.cshtml")
 <body>
+    @RenderPage("~/Pages/DeleteSong.cshtml")
+
+    <script src="~/Scripts/MusicPlayer.js"></script>
     <table>
         <tr>
+            <td class="TableEmptyTD"></td>
             <td>ID</td>
+            <td class="tableTitle">Title</td>
             <td>Artiest</td>
-            <td>Title</td>
+            <td>Album</td>
+
             <td>Cover foto</td>
+            <td>Cover foto link</td>
             <td>Bestand locatie</td>
-            <td>Verwijder nummer</td>
-            <td>Nummer bewerken</td>
+            <td class="TableEmptyTD"></td>
         </tr>
         @foreach (DataRow dr in ds.Tables["songs"].Rows)
         {
-            <tr>
+            <tr><th colspan="9" class="bordered"></th></tr>
+            <tr class="playListRow" ondblclick="MusicPlayerInfo('@dr["title"]', '@dr["artist"]', '@dr["album"]', '@dr["cover"]')">
+                <td class="TableEmptyTD"></td>
                 <td>@dr["id"]</td>
+                <td class="tableTitle">@dr["title"]</td>
                 <td>@dr["artist"]</td>
-                <td>@dr["title"]</td>
+                <td>@dr["album"]</td>
+                <td><img src="@dr["cover"]" class="songCoverImage" /></td>
                 <td>@dr["cover"]</td>
-                <td>@dr["fileLocation"]</td>    
-                <td><a href="~/Pages/DeleteSong.cshtml?id=@dr["id"]"><i class="fa fa-trash accountIcon"></i></a></td>
-                <td><a href="~/Pages/EditSong.cshtml?id=@dr["id"]"><i class="fa fa-edit accountIcon"></i></a></td>
+                <td>@dr["fileLocation"]</td>
+                <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash playListIcon"></i></a></td>
+                <td><a href="~/Pages/EditSong.cshtml?id=@dr["id"]"><i class="fa fa-edit playListIcon"></i></a></td>
+                <td class="TableEmptyTD"></td>
             </tr>
             //Pagina 11
             //Regel 39 pagina 18
 
-
         }
     </table>
     <a href="~/Pages/CreateSong.cshtml">Create Songs</a>
-    <a href="~/Pages/PlaySong.cshtml">Play Songs</a>
+    <a href="~/Pages/Login.cshtml">Login</a>
 
+    <span title="Open muziek speler">
+        <i onclick="MusicPlayerOpen()" id="MusicPlayerOpen" class="fa fa-arrow-up MusicPlayerOpen"></i>
+    </span>
 
-    <iframe src="https://www.google.com/">
-        <a href="https://www.youtube.com/">youtube</a>
-        <a href="https://soundcloud.com/">souncloud</a>
-    </iframe>
+    @RenderPage("~/Shared/_MusicPlayer.cshtml")
+
 </body>
+@RenderPage("~/Shared/_Footer.cshtml")
 </html>

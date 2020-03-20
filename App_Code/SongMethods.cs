@@ -15,14 +15,16 @@ namespace XmlCrud.App_Code
             DataTable dtSongs = new DataTable("songs");
 
             DataColumn dcId = new DataColumn("id");
-            DataColumn dcArtist = new DataColumn("artist");
             DataColumn dcTitle = new DataColumn("title");
+            DataColumn dcArtist = new DataColumn("artist");
+            DataColumn dcAlbum = new DataColumn("album");
             DataColumn dcCover = new DataColumn("cover");
             DataColumn dcFileLocation = new DataColumn("fileLocation");
 
             dtSongs.Columns.Add(dcId);
-            dtSongs.Columns.Add(dcArtist);
             dtSongs.Columns.Add(dcTitle);
+            dtSongs.Columns.Add(dcArtist);
+            dtSongs.Columns.Add(dcAlbum);
             dtSongs.Columns.Add(dcCover);
             dtSongs.Columns.Add(dcFileLocation);
             ds.Tables.Add(dtSongs);

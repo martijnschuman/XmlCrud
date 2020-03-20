@@ -1,0 +1,38 @@
+﻿.playListRow {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.playListIcon {
+    /*padding: 7px 10px 10;*/
+    color: white;
+    width: 19px;
+    text-align: center;
+}
+
+    .playListIcon:hover {
+        cursor: pointer;
+    }
+
+table {
+    border-spacing: 1px;
+}
+
+th.bordered {
+    background-image: linear-gradient(to left, rgba(128,128,128,0), rgba(128,128,128,1));
+}
+
+.tableTitle {
+    width: 200px;
+}
+
+.TableEmptyTD {
+    width: 20px;
+}
+
+.songCoverImage {
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+    padding: 0px;
+}

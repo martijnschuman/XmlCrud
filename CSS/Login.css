@@ -27,3 +27,8 @@
     z-index: 2;
     opacity: 0.75;
 }
+#InloggenLink{
+    position:   relative;
+    left: 56%;
+    margin-top: 35%;
+}

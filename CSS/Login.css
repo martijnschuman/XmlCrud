@@ -34,6 +34,13 @@
 
 }
 #InloggenLink{
-    position:   absolute;
-    top:75%;
+    position: absolute;
+    top: 75%;
+}
+
+/*Login link index pagina*/
+.loginLink{
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }

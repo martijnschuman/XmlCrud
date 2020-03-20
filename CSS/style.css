@@ -184,6 +184,14 @@ a:link, a:visited, a:hover, a:active {
     text-align: center;
 }
 
+.EmbedTuturial {
+    text-align: center;
+}
+
+.EmbedTuturialImg {
+    width: 80%;
+}
+
 /*Footer opmaak*/
 .footer {
     position: absolute;
@@ -201,12 +209,4 @@ a:link, a:visited, a:hover, a:active {
     font-size: 15px;
     color: white;
     text-align: center;
-}
-
-.EmbedTuturial{
-    text-align: center;
-}
-
-.EmbedTuturialImg{
-    width: 80%;
 }

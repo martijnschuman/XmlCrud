@@ -14,6 +14,7 @@
     int lastId = int.Parse(lastRow["id"].ToString());
     int nextId = lastId + 1;
     Session["nextID"] = nextId;
+
 }
 
 <html>
@@ -21,44 +22,46 @@
 <body>
     @RenderPage("~/Pages/DeleteSong.cshtml")
 
+    <a class="loginLink" href="~/Pages/Login.cshtml">Login</a>
+
     <script src="~/Scripts/MusicPlayer.js"></script>
-    <table>
+
+    <div id="PlayListInfo">
+        <img id="PlayListImg" src="~/Images/PlayList1.jpg" />
+        <h3 id="PlayListSubTitle">Afspeellijst</h3>
+        <h1 id="PlayListTitle">PlayMusic</h1>
+        <p id="PlayListGeneralInfo">@lastId nummers, 00 uur en 00 minuten</p>
+        <a id="SongToevoegen" href="~/Pages/CreateSong.cshtml">Nummer toevoegen</a>
+        <iframe id="video" width="375" height="210" src="https://www.youtube.com/embed/r_0JjYUe5jo?enablejsapi=1&html5=1" frameborder="0" allow="encrypted-media;"></iframe>
+    </div>
+    <table class="PlayList">
         <tr>
             <td class="TableEmptyTD"></td>
             <td>ID</td>
+            <td class="TableEmptyTD"></td>
             <td class="tableTitle">Title</td>
             <td>Artiest</td>
             <td>Album</td>
 
-            <td>Cover foto</td>
-            <td>Cover foto link</td>
-            <td>Bestand locatie</td>
+            <td>Cover</td>
             <td class="TableEmptyTD"></td>
         </tr>
         @foreach (DataRow dr in ds.Tables["songs"].Rows)
         {
-            <tr><th colspan="9" class="bordered"></th></tr>
+            <tr><th colspan="8" class="bordered"></th></tr>
             <tr class="playListRow" ondblclick="MusicPlayerInfo('@dr["title"]', '@dr["artist"]', '@dr["album"]', '@dr["cover"]', '@dr["fileLocation"]')">
                 <td class="TableEmptyTD"></td>
                 <td>@dr["id"]</td>
+                <td class="TableEmptyTD"></td>
                 <td class="tableTitle">@dr["title"]</td>
                 <td class="tableArtist">@dr["artist"]</td>
-                <td>@dr["album"]</td>
-                <td><img src="@dr["cover"]" class="songCoverImage" /></td>
-                <td class="taleCover">@dr["cover"]</td>
-                <td>@dr["fileLocation"]</td>
+                <td class="tableAlbum">@dr["album"]</td>
+                <td background="@dr["cover"]" class="songCoverImage"></td>
                 <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash playListIcon"></i></a></td>
                 <td class="TableEmptyTD"></td>
             </tr>
-            //Pagina 11
-            //Regel 39 pagina 18
-
         }
     </table>
-    <a href="~/Pages/CreateSong.cshtml">Nummer toevoegen</a>
-    <a href="~/Pages/Login.cshtml">Login</a>
-
-    <iframe id="video" width="480" height="360" src="https://www.youtube.com/embed/r_0JjYUe5jo?enablejsapi=1&html5=1" frameborder="0" allow=" encrypted-media; gyroscope; picture-in-picture"></iframe>
 
     <span title="Open muziek speler">
         <i onclick="MusicPlayerOpen()" id="MusicPlayerOpen" class="fa fa-arrow-up MusicPlayerOpen"></i>

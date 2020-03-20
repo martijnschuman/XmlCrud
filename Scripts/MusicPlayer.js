@@ -1,17 +1,22 @@
-﻿/*Opent muziek speler*/
-function MusicPlayerOpen() {
-    document.getElementById("MusicPlayer").style.display = "block";
-    document.getElementById("MusicPlayerOpen").style.setProperty('display', 'none', 'important');
-}
+﻿// global variable for the player
+var player;
 
-/*Sluit muziek speker*/
-function MusicPlayerClose() {
-    document.getElementById("MusicPlayer").style.display = "none";
-    document.getElementById("MusicPlayerOpen").style.setProperty('display', 'block', 'important');
+// this function gets called when API is ready to use
+function onYouTubePlayerAPIReady() {
+    // create the global player from the specific iframe (#video)
+    player = new YT.Player('video', {
+        events: {
+            // call this function when player is ready to use
+            'onReady': onPlayerReady
+        }
+    });
 }
 
 /*Laat nummer informatie in de muziek speler zien*/
 function MusicPlayerInfo(titleAtr, artistAtr, albumAtr, coverAtr, fileLocation) {
+
+    var play = document.getElementById("MusicPlayerPlay");
+    var pause = document.getElementById("MusicPlayerPause");
 
     var title = document.getElementById("MusicPlayerTitle");
     var artist = document.getElementById("MusicPlayerArtist");
@@ -25,9 +30,13 @@ function MusicPlayerInfo(titleAtr, artistAtr, albumAtr, coverAtr, fileLocation) 
     album.innerHTML = albumAtr;
     cover.src = coverAtr;
 
+
+    pause.style.display = "none";
+    play.style.setProperty('display', 'block', 'important');
     songLink.src = fileLocation + "?enablejsapi=1&html5=1";
 
-    MusicPlayerMaxTime()
+    MusicPlayerMaxTime();
+
 }
 
 /*Veranderd play-pauze knop*/
@@ -44,25 +53,11 @@ function MusicPlayerPlay(action) {
     }
 }
 
-// global variable for the player
-var player;
-
-// this function gets called when API is ready to use
-function onYouTubePlayerAPIReady() {
-    // create the global player from the specific iframe (#video)
-    player = new YT.Player('video', {
-        events: {
-            // call this function when player is ready to use
-            'onReady': onPlayerReady
-        }
-    });
-}
-
 function onPlayerReady(event) {
     var playButton = document.getElementById("MusicPlayerPlay");
     playButton.addEventListener("click", function () {
         player.playVideo();
-        MusicPlayerMaxTime()
+        MusicPlayerMaxTime();
 
         window.setInterval(function () {
             MusicPlayerCurrentTime()
@@ -73,6 +68,11 @@ function onPlayerReady(event) {
     pauseButton.addEventListener("click", function () {
         player.pauseVideo();
     });
+}
+
+/*Volume*/
+function SetVolume(value) {
+    player.setVolume(value);
 }
 
 function MusicPlayerCurrentTime() {
@@ -110,7 +110,14 @@ tag.src = "https://www.youtube.com/player_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-/*Volume*/
-function SetVolume(val) {
-    player.volume = val / 100;
+/*Opent muziek speler*/
+function MusicPlayerOpen() {
+    document.getElementById("MusicPlayer").style.display = "block";
+    document.getElementById("MusicPlayerOpen").style.setProperty('display', 'none', 'important');
+}
+
+/*Sluit muziek speker*/
+function MusicPlayerClose() {
+    document.getElementById("MusicPlayer").style.display = "none";
+    document.getElementById("MusicPlayerOpen").style.setProperty('display', 'block', 'important');
 }

@@ -32,4 +32,36 @@
     <cover>https://cdn.myonlinestore.eu/93c76940-6be1-11e9-a722-44a8421b9960/image/cache/full/692648420cbb58c5441a1b69a296900e50967ae1.jpg</cover>
     <fileLocation>https://www.youtube.com/embed/dvgZkm1xWPE</fileLocation>
   </songs>
+  <songs>
+    <id>5</id>
+    <title>Running Out Of Love</title>
+    <artist>Yung Bleu</artist>
+    <album>Running Out Of Love</album>
+    <cover>https://yt3.ggpht.com/a/AATXAJz2kXpdWqyTH9eifkZJGuW6cYNENFAmwW-z8g=s288-c-k-c0xffffffff-no-rj-mo</cover>
+    <fileLocation>https://www.youtube.com/embed/ZPpM4qpcSG8</fileLocation>
+  </songs>
+  <songs>
+    <id>6</id>
+    <title>Let Het Go</title>
+    <artist>Passenger</artist>
+    <album>All the Little Lights</album>
+    <cover>https://direct.rhapsody.com/imageserver/images/alb.71409577/500x500.jpg</cover>
+    <fileLocation>https://www.youtube.com/embed/RBumgq5yVrA</fileLocation>
+  </songs>
+  <songs>
+    <id>7</id>
+    <title>Grenade</title>
+    <artist>Bruno Mars</artist>
+    <album>Doo-Wops &amp; Hooligans</album>
+    <cover>https://www.top40.nl/media/cache/related/uploads/title/10407/original.jpg</cover>
+    <fileLocation>https://www.youtube.com/embed/SR6iYWJxHqs</fileLocation>
+  </songs>
+  <songs>
+    <id>8</id>
+    <title>See You Again</title>
+    <artist>Wiz Khalifa</artist>
+    <album>See You Again</album>
+    <cover>https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/632/863/original/3e8dc5.jpeg?1507234233</cover>
+    <fileLocation>https://www.youtube.com/embed/RgKAFK5djSk</fileLocation>
+  </songs>
 </playlist>

@@ -1,27 +1,35 @@
 <?xml version="1.0" standalone="yes"?>
 <playlist>
   <songs>
+    <id>1</id>
+    <title>Godzilla</title>
+    <artist>Eminem</artist>
+    <album>Music To Be Murdered Buy</album>
+    <cover>https://media.hitparade.ch/cover/big/eminem_feat_juice_wrld-godzilla_s.jpg</cover>
+    <fileLocation>https://www.youtube.com/embed/r_0JjYUe5jo</fileLocation>
+  </songs>
+  <songs>
     <id>2</id>
-    <title>Title2</title>
-    <artist>Artist2</artist>
-    <album>Album2</album>
-    <cover>https://i.pinimg.com/originals/b4/75/00/b4750046d94fed05d00dd849aa5f0ab7.jpg</cover>
-    <fileLocation>Nummer2.mp3</fileLocation>
+    <title>Blame</title>
+    <artist>Calvin Harris</artist>
+    <album>Motion</album>
+    <cover>https://media.hitparade.ch/cover/big/calvin_harris_feat_john_newman-blame_s.jpg</cover>
+    <fileLocation>https://www.youtube.com/embed/6ACl8s_tBzE</fileLocation>
   </songs>
   <songs>
     <id>3</id>
-    <title>Title3</title>
-    <artist>Artist3</artist>
-    <album>Album3</album>
-    <cover>https://i.pinimg.com/originals/b4/75/00/b4750046d94fed05d00dd849aa5f0ab7.jpg</cover>
-    <fileLocation>Nummer3.mp3</fileLocation>
+    <title>THE CYKA BLYAT SONG</title>
+    <artist>Dimitri The Russian</artist>
+    <album>Dimitri The Russian</album>
+    <cover>https://yt3.ggpht.com/a/AATXAJy_6USjKZSVrN8_xRkn6Q4Ecq3itcof71KrYg=s288-c-k-c0xffffffff-no-rj-mo</cover>
+    <fileLocation>https://www.youtube.com/embed/bo5ZVe1LHxU</fileLocation>
   </songs>
   <songs>
     <id>4</id>
-    <title>Title4</title>
-    <artist>Artist4</artist>
-    <album>Album4</album>
-    <cover>https://i.pinimg.com/originals/b4/75/00/b4750046d94fed05d00dd849aa5f0ab7.jpg</cover>
-    <fileLocation>Nummer4.mp3</fileLocation>
+    <title>Viva La Vida</title>
+    <artist>Coldplay</artist>
+    <album>Viva La Vida Or Death And All His Friends</album>
+    <cover>https://cdn.myonlinestore.eu/93c76940-6be1-11e9-a722-44a8421b9960/image/cache/full/692648420cbb58c5441a1b69a296900e50967ae1.jpg</cover>
+    <fileLocation>https://www.youtube.com/embed/dvgZkm1xWPE</fileLocation>
   </songs>
 </playlist>

@@ -11,44 +11,74 @@ function MusicPlayerClose() {
 }
 
 /*Laat nummer informatie in de muziek speler zien*/
-function MusicPlayerInfo(titleAtr, artistAtr, albumAtr, coverAtr) {
+function MusicPlayerInfo(titleAtr, artistAtr, albumAtr, coverAtr, fileLocation) {
 
     var title = document.getElementById("MusicPlayerTitle");
     var artist = document.getElementById("MusicPlayerArtist");
     var album = document.getElementById("MusicPlayerAlbum");
     var cover = document.getElementById("songCoverImage");
+
+    var songLink = document.getElementById("video");
+
     title.innerHTML = titleAtr;
     artist.innerHTML = artistAtr;
     album.innerHTML = albumAtr;
     cover.src = coverAtr;
-}
 
-/*Volume*/
-function SetVolume(val) {
-    var player = document.getElementById('audio');
-    player.volume = val / 100;
+    songLink.src = fileLocation + "?enablejsapi=1&html5=1";
+
+
 }
 
 /*Veranderd play-pauze knop*/
-function MusicPlayerPlayPause() {
+function MusicPlayerPlay(action) {
     var play = document.getElementById("MusicPlayerPlay");
+    var pause = document.getElementById("MusicPlayerPause");
 
-    if (play.className == "fa fa-play PlayMusicButton") {
-        play.className = "fa fa-pause PlayMusicButton";
-        play.style.marginRight = "17px";
-    }
-    else if (play.className == "fa fa-pause PlayMusicButton") {
-        play.className = "fa fa-play PlayMusicButton";
-        play.style.marginRight = "20px";
+    if (action == "play") {
+        play.style.display = "none";
+        pause.style.setProperty('display', 'block', 'important');
+    } else if (action == "pause") {
+        pause.style.display = "none";
+        play.style.setProperty('display', 'block', 'important');
     }
 }
 
-/*Volgend nummer */
-function MusicPlayerPrevSong() {
-    console.log("Vorig nummer");
+// global variable for the player
+var player;
+
+// this function gets called when API is ready to use
+function onYouTubePlayerAPIReady() {
+    // create the global player from the specific iframe (#video)
+    player = new YT.Player('video', {
+        events: {
+            // call this function when player is ready to use
+            'onReady': onPlayerReady
+        }
+    });
 }
 
-/*Vorig nummer */
-function MusicPlayerNextSong() {
-    console.log("Volgend nummer");
+function onPlayerReady(event) {
+
+    // bind events
+    var playButton = document.getElementById("MusicPlayerPlay");
+    playButton.addEventListener("click", function () {
+        player.playVideo();
+    });
+
+    var pauseButton = document.getElementById("MusicPlayerPause");
+    pauseButton.addEventListener("click", function () {
+        player.pauseVideo();
+    });
+}
+
+// Inject YouTube API script
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+/*Volume*/
+function SetVolume(val) {
+    player.volume = val / 100;
 }

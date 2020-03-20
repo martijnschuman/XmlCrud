@@ -168,6 +168,22 @@ a:link, a:visited, a:hover, a:active {
     border-radius: 10px;
 }
 
+.formWarning{
+    color: red;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.formEmbedLink {
+    display: block;
+    font-size: 14px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    color: rgb(145, 145, 145) !important;
+    transition: color 0.2s ease;
+    text-align: center;
+}
+
 /*Footer opmaak*/
 .footer {
     position: absolute;
@@ -185,4 +201,12 @@ a:link, a:visited, a:hover, a:active {
     font-size: 15px;
     color: white;
     text-align: center;
+}
+
+.EmbedTuturial{
+    text-align: center;
+}
+
+.EmbedTuturialImg{
+    width: 80%;
 }

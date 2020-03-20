@@ -10,7 +10,6 @@
     Session["playlistClass"] = mySongMethods;
     Session["file"] = file;
 
-
     DataRow lastRow = ds.Tables["songs"].Rows[ds.Tables["songs"].Rows.Count - 1];
     int lastId = int.Parse(lastRow["id"].ToString());
     int nextId = lastId + 1;
@@ -39,7 +38,7 @@
         @foreach (DataRow dr in ds.Tables["songs"].Rows)
         {
             <tr><th colspan="9" class="bordered"></th></tr>
-            <tr class="playListRow" ondblclick="MusicPlayerInfo('@dr["title"]', '@dr["artist"]', '@dr["album"]', '@dr["cover"]')">
+            <tr class="playListRow" ondblclick="MusicPlayerInfo('@dr["title"]', '@dr["artist"]', '@dr["album"]', '@dr["cover"]', '@dr["fileLocation"]')">
                 <td class="TableEmptyTD"></td>
                 <td>@dr["id"]</td>
                 <td class="tableTitle">@dr["title"]</td>
@@ -58,6 +57,8 @@
     </table>
     <a href="~/Pages/CreateSong.cshtml">Create Songs</a>
     <a href="~/Pages/Login.cshtml">Login</a>
+
+    <iframe id="video" width="480" height="320" src="https://www.youtube.com/embed/r_0JjYUe5jo?enablejsapi=1&html5=1" frameborder="0" allow=" encrypted-media; gyroscope; picture-in-picture"></iframe>
 
     <span title="Open muziek speler">
         <i onclick="MusicPlayerOpen()" id="MusicPlayerOpen" class="fa fa-arrow-up MusicPlayerOpen"></i>

@@ -24,7 +24,7 @@
 #songCoverImage {
     position: absolute;
     height: 100%;
-    z-index: 3;
+    z-index: 4 !important;
 }
 
 .SongInfo {
@@ -48,6 +48,10 @@
     position: absolute;
     left: Calc(50% - 74px);
     margin-top: 5px;
+}
+
+.Pause{
+    display: none !important;
 }
 
 #MusicPlayerPlay {

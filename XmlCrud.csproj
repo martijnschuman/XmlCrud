@@ -106,6 +106,7 @@
     <Content Include="CSS\fonts.css" />
     <Content Include="CSS\MusicPlayer.css" />
     <Content Include="Images\Achtergrond.jpg" />
+    <Content Include="Images\EmbedLinkTuturial.png" />
     <Content Include="Images\icon.ico" />
     <Content Include="Pages\Login\loginBackground.png" />
     <Content Include="Pages\Login\LoginVideo.m4v" />
@@ -156,6 +157,7 @@
     <Content Include="Shared\_MusicPlayer.cshtml" />
     <Content Include="Pages\Login.cshtml" />
     <Content Include="Pages\AccountAanmaken.cshtml" />
+    <Content Include="Shared\EmbedTutorial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

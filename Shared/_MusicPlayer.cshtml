@@ -9,9 +9,10 @@
     </div>
 
     <div id="buttons">
-        <span title="Vorig nummer"><i onclick="MusicPlayerPrevSong()" id="pre" class="fa fa-arrow-left PlayMusicButton"></i></span>
-        <span title="Speel of pauzeer"><i onclick="MusicPlayerPlayPause()" id="MusicPlayerPlay" class="fa fa-play PlayMusicButton"></i></span>
-        <span title="Volgend nummer"><i onclick="MusicPlayerNextSong()" id="next" class="fa fa-arrow-right PlayMusicButton"></i></span>
+        <span title="Vorig nummer"><i id="pre" class="fa fa-arrow-left PlayMusicButton"></i></span>
+        <span title="Speel"><i onclick="MusicPlayerPlay('play')" id="MusicPlayerPlay" class="fa fa-play PlayMusicButton"></i></span>
+        <span title="Pauzeer"><i onclick="MusicPlayerPlay('pause')" id="MusicPlayerPause" class="fa fa-pause PlayMusicButton Pause"></i></span>
+        <span title="Volgend nummer"><i id="next" class="fa fa-arrow-right PlayMusicButton"></i></span>
     </div>
 
     <div id="audio"></div>

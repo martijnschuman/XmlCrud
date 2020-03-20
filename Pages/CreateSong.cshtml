@@ -20,26 +20,39 @@
 
                 @if (IsPost)
                 {
-                    DataRow dr = mySongMethods.GetEmptyDataRow();
+                    string fileLocation = Request.Form["fileLocation"];
+                    if (!fileLocation.Contains("https://www.youtube.com/embed/"))
+                    {
+                        <div id='formError'>
+                            <p></p>
+                            <p></p>
+                        </div>
+                    }
+                    else
+                    {
+                        DataRow dr = mySongMethods.GetEmptyDataRow();
 
-                    dr[0] = Request.Form["id"];
-                    dr[1] = Request.Form["title"];
-                    dr[2] = Request.Form["artist"];
-                    dr[3] = Request.Form["album"];
-                    dr[4] = Request.Form["cover"];
-                    dr[5] = Request.Form["fileLocation"];
+                        dr[0] = Request.Form["id"];
+                        dr[1] = Request.Form["title"];
+                        dr[2] = Request.Form["artist"];
+                        dr[3] = Request.Form["album"];
+                        dr[4] = Request.Form["cover"];
+                        dr[5] = Request.Form["fileLocation"];
 
-                    mySongMethods.CreateSong(dr, file);
-                    <div id='formSuccess'>
-                        <p>Nummer succesvol toegevoegd.</p>
-                        <p>U wordt automatisch terug gestuurd naar de home pagina.</p>
-                    </div>
-                    Response.AddHeader("REFRESH", "6;URL=../index.cshtml");
-                    //Pagina 16
+                        mySongMethods.CreateSong(dr, file);
+                        <div id='formSuccess'>
+                            <p>Nummer succesvol toegevoegd.</p>
+                            <p>U wordt automatisch terug gestuurd naar de home pagina.</p>
+                        </div>
+                        Response.AddHeader("REFRESH", "6;URL=../index.cshtml");
+                        //Pagina 16
+                    }
+
+
                 }
 
                 <div class="formInputContainer">
-                    <i class="fa fa-id-card formIcon"></i><input class="InputBox" type="text" value="@Session["nextID"]" name="id" readonly/>
+                    <i class="fa fa-id-card formIcon"></i><input class="InputBox" type="text" value="@Session["nextID"]" name="id" readonly />
                 </div>
                 <div class="formInputContainer">
                     <i class="fa fa-music formIcon"></i><input class="InputBox" type="text" placeholder="Title" name="title" />
@@ -56,6 +69,9 @@
                 <div class="formInputContainer">
                     <i class="fa fa-file formIcon"></i><input class="InputBox" type="text" placeholder="Bestand locatie" name="fileLocation" />
                 </div>
+                <p class="formWarning">Alleen YouTube embed links toegestaan!</p>
+                <a class="formEmbedLink" href="../Shared/EmbedTutorial.cshtml" target="popup" onclick="window.open('../Shared/EmbedTutorial.cshtml','popup','width=600,height=600'); return false;">Hoe krijg ik een embed link?</a>
+
                 <input type="submit" class="submit" id="accountSubmit" value="Nummer toevoegen" />
             </div>
         </form>

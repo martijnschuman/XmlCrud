@@ -28,7 +28,6 @@
     opacity: 0.75;
 }
 #InloggenLink{
-    position:   relative;
-    left: 56%;
-    margin-top: 35%;
+    position:   absolute;
+    top:75%;
 }

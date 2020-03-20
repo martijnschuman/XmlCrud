@@ -6,9 +6,14 @@
     z-index: 3 !important;
 }
 
-#wachtwoordResetLink {
+#wachtwoordResetLinkLogin {
     position: relative;
     left: 56%;
+    margin-top: -25px;
+}
+#wachtwoordResetLinkSignup {
+    position: relative;
+    left: 50%;
     margin-top: -25px;
 }
 

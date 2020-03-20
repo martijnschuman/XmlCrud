@@ -1,14 +1,6 @@
 <?xml version="1.0" standalone="yes"?>
 <playlist>
   <songs>
-    <id>1</id>
-    <title>Title1</title>
-    <artist>Artist1</artist>
-    <album>Album1</album>
-    <cover>https://i.pinimg.com/originals/b4/75/00/b4750046d94fed05d00dd849aa5f0ab7.jpg</cover>
-    <fileLocation>Nummer1.mp3</fileLocation>
-  </songs>
-  <songs>
     <id>2</id>
     <title>Title2</title>
     <artist>Artist2</artist>

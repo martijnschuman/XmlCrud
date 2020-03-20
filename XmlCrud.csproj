@@ -100,12 +100,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CSS\DeleteSong.css" />
+    <Content Include="CSS\Login.css" />
     <Content Include="CSS\PlayList.css" />
     <Content Include="CSS\style.css" />
     <Content Include="CSS\fonts.css" />
     <Content Include="CSS\MusicPlayer.css" />
     <Content Include="Images\Achtergrond.jpg" />
     <Content Include="Images\icon.ico" />
+    <Content Include="Pages\Login\loginBackground.png" />
+    <Content Include="Pages\Login\LoginVideo.m4v" />
     <Content Include="Pages\Songs\Song1.mp3" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
@@ -150,6 +153,7 @@
     <Content Include="Shared\_Header.cshtml" />
     <Content Include="Shared\_Footer.cshtml" />
     <Content Include="Shared\_MusicPlayer.cshtml" />
+    <Content Include="Pages\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

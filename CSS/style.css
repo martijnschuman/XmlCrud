@@ -175,6 +175,7 @@ a:link, a:visited, a:hover, a:active {
     bottom: 0px;
     background-color: rgba(58, 59, 58, 0.8);
     margin: 0 auto;
+    z-index: 10;
 }
 
 .footerTekst {

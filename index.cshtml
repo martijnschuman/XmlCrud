@@ -42,10 +42,10 @@
                 <td class="TableEmptyTD"></td>
                 <td>@dr["id"]</td>
                 <td class="tableTitle">@dr["title"]</td>
-                <td>@dr["artist"]</td>
+                <td class="tableArtist">@dr["artist"]</td>
                 <td>@dr["album"]</td>
                 <td><img src="@dr["cover"]" class="songCoverImage" /></td>
-                <td>@dr["cover"]</td>
+                <td class="taleCover">@dr["cover"]</td>
                 <td>@dr["fileLocation"]</td>
                 <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash playListIcon"></i></a></td>
                 <td class="TableEmptyTD"></td>
@@ -58,7 +58,7 @@
     <a href="~/Pages/CreateSong.cshtml">Nummer toevoegen</a>
     <a href="~/Pages/Login.cshtml">Login</a>
 
-    <iframe id="video" width="0" height="0" src="https://www.youtube.com/embed/r_0JjYUe5jo?enablejsapi=1&html5=1" frameborder="0" allow=" encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <iframe id="video" width="480" height="360" src="https://www.youtube.com/embed/r_0JjYUe5jo?enablejsapi=1&html5=1" frameborder="0" allow=" encrypted-media; gyroscope; picture-in-picture"></iframe>
 
     <span title="Open muziek speler">
         <i onclick="MusicPlayerOpen()" id="MusicPlayerOpen" class="fa fa-arrow-up MusicPlayerOpen"></i>

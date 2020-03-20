@@ -23,7 +23,15 @@ th.bordered {
 }
 
 .tableTitle {
-    width: 200px;
+    width: 250px;
+}
+
+.tableArtist {
+    width: 150px;
+}
+
+.taleCover{
+    width: 150px;
 }
 
 .TableEmptyTD {

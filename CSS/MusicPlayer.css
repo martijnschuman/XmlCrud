@@ -46,23 +46,25 @@
 /*vorige/pauzeer/volgende nummer in het midden*/
 #buttons {
     position: absolute;
-    left: Calc(50% - 74px);
+    left: Calc(50% - 115px);
     margin-top: 5px;
+}
+
+#PlayPause{
+    display: inline-block;
 }
 
 .Pause{
     display: none !important;
-}
-
-#MusicPlayerPlay {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 17px !important;
 }
 
 /*Opmaak van de vorige/pauzeer/volgende nummer*/
 .PlayMusicButton {
     transition: all .1s ease-in-out;
     font-size: 40px !important;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
     .PlayMusicButton:hover {

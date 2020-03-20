@@ -27,7 +27,7 @@ function MusicPlayerInfo(titleAtr, artistAtr, albumAtr, coverAtr, fileLocation) 
 
     songLink.src = fileLocation + "?enablejsapi=1&html5=1";
 
-
+    MusicPlayerMaxTime()
 }
 
 /*Veranderd play-pauze knop*/
@@ -59,17 +59,49 @@ function onYouTubePlayerAPIReady() {
 }
 
 function onPlayerReady(event) {
-
-    // bind events
     var playButton = document.getElementById("MusicPlayerPlay");
     playButton.addEventListener("click", function () {
         player.playVideo();
+        MusicPlayerMaxTime()
+
+        window.setInterval(function () {
+            MusicPlayerCurrentTime()
+        }, 1000);
     });
 
     var pauseButton = document.getElementById("MusicPlayerPause");
     pauseButton.addEventListener("click", function () {
         player.pauseVideo();
     });
+}
+
+function MusicPlayerCurrentTime() {
+    var currentTIme = document.getElementById("MusicPlayerCurrentTime");
+    var fill = document.getElementById("fill");
+
+    dateObj = new Date(player.getCurrentTime() * 1000);
+    hours = dateObj.getUTCHours();
+    minutes = dateObj.getUTCMinutes();
+    seconds = dateObj.getSeconds();
+
+    timeString = minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+
+    var currentPos = player.getCurrentTime() / player.getDuration();
+    fill.style.width = currentPos * 100 + '%';
+    currentTIme.innerHTML = timeString;
+}
+
+function MusicPlayerMaxTime() {
+    var MusicPlayerMaxTime = document.getElementById("MusicPlayerMaxTime");
+
+    dateObj = new Date(player.getDuration() * 1000);
+    hours = dateObj.getUTCHours();
+    minutes = dateObj.getUTCMinutes();
+    seconds = dateObj.getSeconds();
+
+    timeString = minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+
+    MusicPlayerMaxTime.innerHTML = timeString; 
 }
 
 // Inject YouTube API script

@@ -103,7 +103,7 @@
     <Content Include="CSS\PlayList.css" />
     <Content Include="CSS\style.css" />
     <Content Include="CSS\fonts.css" />
-    <Content Include="CSS\PlaySongs.css" />
+    <Content Include="CSS\MusicPlayer.css" />
     <Content Include="Images\Achtergrond.jpg" />
     <Content Include="Images\icon.ico" />
     <Content Include="Pages\Songs\Song1.mp3" />
@@ -134,7 +134,6 @@
     <Content Include="CSS\Fonts\Roboto_Mono\RobotoMono-Regular.ttf" />
     <Content Include="CSS\Fonts\Roboto_Mono\RobotoMono-Thin.ttf" />
     <Content Include="CSS\Fonts\Roboto_Mono\RobotoMono-ThinItalic.ttf" />
-    <Content Include="Pages\PlaySong.cshtml" />
     <Content Include="Pages\Songs\Song2.mp3" />
     <Content Include="Scripts\DeleteSong.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -150,6 +149,7 @@
     <None Include="packages.config" />
     <Content Include="Shared\_Header.cshtml" />
     <Content Include="Shared\_Footer.cshtml" />
+    <Content Include="Shared\_MusicPlayer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

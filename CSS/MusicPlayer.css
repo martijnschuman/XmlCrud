@@ -6,6 +6,21 @@
     bottom: 0px;
 }
 
+/*Opent/sluit muziek speler*/
+.MusicPlayerOpen{
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
+    font-size: 23px !important;
+    display: none !important;
+}
+.MusicPlayerClose{
+    position: absolute;
+    top: 1px;
+    right: 5px;
+    font-size: 23px !important;
+}
+
 #songCoverImage {
     position: absolute;
     height: 100%;
@@ -31,11 +46,11 @@
 /*vorige/pauzeer/volgende nummer in het midden*/
 #buttons {
     position: absolute;
-    left: Calc(50% - 68px);
+    left: Calc(50% - 74px);
     margin-top: 5px;
 }
 
-#play{
+#MusicPlayerPlay {
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -47,7 +62,7 @@
 }
 
     .PlayMusicButton:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 
 /*Progress bar van de tijd van het nummer*/
@@ -92,12 +107,17 @@
     left: 66%;
 }
 
-
 .MusicPlayerVolume {
     position: absolute;
-    right: 170px;
     bottom: 42px;
 }
+#MusicPlayerVolumeMin {
+    right: 180px;
+}
+#MusicPlayerVolumeMax {
+    right: 25px;
+}
+
 /*Opmaak van de volume slider*/
 .volumeSlider {
     -webkit-appearance: none;
@@ -107,7 +127,7 @@
     border-radius: 50px;
     cursor: pointer;
     position: absolute;
-    right: 30px;
+    right: 45px;
     bottom: 45px;
     width: 130px;
 }

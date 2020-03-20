@@ -7,10 +7,8 @@
     SongMethods mySongMethods = new SongMethods();
     string file = @"~\App_Data\PlayList.xml";
     DataSet ds = mySongMethods.GetAllSongs(file);
-    //Pagina 10
     Session["playlistClass"] = mySongMethods;
     Session["file"] = file;
-    //Pagina 13
 
     int currentID = ds.Tables["songs"].Rows.Count;
     Session["nextID"] = currentID + 1;
@@ -38,7 +36,7 @@
         @foreach (DataRow dr in ds.Tables["songs"].Rows)
         {
             <tr><th colspan="9" class="bordered"></th></tr>
-            <tr class="playListRow" ondblclick="ShowMusicPlayer('@dr["title"]', '@dr["artist"]', '@dr["album"]', '@dr["cover"]', '@dr["fileLocation"]')">
+            <tr class="playListRow" ondblclick="MusicPlayerInfo('@dr["title"]', '@dr["artist"]', '@dr["album"]', '@dr["cover"]')">
                 <td class="TableEmptyTD"></td>
                 <td>@dr["id"]</td>
                 <td class="tableTitle">@dr["title"]</td>
@@ -57,37 +55,12 @@
         }
     </table>
     <a href="~/Pages/CreateSong.cshtml">Create Songs</a>
-    <a href="~/Pages/PlaySong.cshtml">Play Songs</a>
 
-    <div class="MusicPlayer" id="MusicPlayer">
+    <span title="Open muziek speler">
+        <i onclick="MusicPlayerOpen()" id="MusicPlayerOpen" class="fa fa-arrow-up MusicPlayerOpen"></i>
+    </span>
 
-        <img id="songCoverImage" src="" alt="SongCover"/>
-
-        <div class="SongInfo">
-            <div id="MusicPlayerTitle">*Title*</div>
-            <div id="MusicPlayerArtist">*Artiest*</div>
-            <div id="MusicPlayerAlbum">*Album*</div>
-        </div>
-
-        <div id="buttons">
-            <span title="Vorig nummer"><i onclick="pre()" id="pre" class="fa fa-arrow-left PlayMusicButton"></i></span>
-            <span title="Speel of pauzeer"><i onclick="playOrPauseSong()" id="play" class="fa fa-play PlayMusicButton"></i></span>
-            <span title="Volgend nummer"><i onclick="next()" id="next" class="fa fa-arrow-right PlayMusicButton"></i></span>
-        </div>
-
-        <div class="MusicPlayerTime" id="MusicPlayerCurrentTime">00:00</div>
-            <div id="seek-bar">
-                <div id="fill"></div>
-                <div id="handle"></div>
-            </div>
-        <div class="MusicPlayerTime" id="MusicPlayerMaxTime">00:00</div>
-
-        <span title="Volume">
-            <i class="fa fa-volume-up MusicPlayerVolume"></i>
-            <input type="range" min="1" max="100" value="75" class="volumeSlider" id="volumeControll" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)">
-        </span>
-
-    </div>
+    @RenderPage("~/Shared/_MusicPlayer.cshtml")
 
 </body>
 @RenderPage("~/Shared/_Footer.cshtml")

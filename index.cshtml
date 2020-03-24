@@ -15,6 +15,14 @@
     int nextId = lastId + 1;
     Session["nextID"] = nextId;
 
+    if (Session["login"] != null)
+    {
+        
+    }
+    else
+    {
+        Response.Redirect(@"~/Pages/Login.cshtml");
+    }
 }
 
 <html>
@@ -22,10 +30,9 @@
 <body>
     @RenderPage("~/Pages/DeleteSong.cshtml")
 
-    <a class="loginLink" href="~/Pages/Login.cshtml">Login</a>
+    <a class="loginLink" href="~/Pages/Logout.cshtml">Logout</a>
 
     <script src="~/Scripts/MusicPlayer.js"></script>
-
     <div id="PlayListInfo">
         <img id="PlayListImg" src="~/Images/PlayList1.jpg" />
         <h3 id="PlayListSubTitle">Afspeellijst</h3>
@@ -68,7 +75,6 @@
     </span>
 
     @RenderPage("~/Shared/_MusicPlayer.cshtml")
-
 </body>
 @RenderPage("~/Shared/_Footer.cshtml")
 </html>

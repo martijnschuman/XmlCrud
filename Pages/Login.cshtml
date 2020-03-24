@@ -34,6 +34,39 @@
             <a class="smallLink" id="wachtwoordResetLinkLogin" href="?wachtwoordreset">Wachtwoord vergeten?</a>
             <input type="submit" class="submit" id="loginSubmit" value="Inloggen" />
         </form>
+
+        @if (IsPost)
+        {
+
+            string username = Request.Form["username"];
+            string pwd = Request.Form["pwd"];
+
+            string usernameAdmin = "smartie";
+            string usernamePwd = "smartiepwd";
+
+            int login = 0;
+            int AccessLevel = 0;
+
+            <b>Debug only</b>
+            <p>In post</p>
+            <p>Form username = @Request.Form["username"]</p>
+            <p>Form pwd = @Request.Form["pwd"]</p>
+            <p>Hardcode username = @usernameAdmin</p>
+            <p>Hardcode pwd = @usernamePwd</p>
+
+            if (username == usernameAdmin && pwd == usernamePwd)
+            {
+                AccessLevel = 1;
+                login = 1;
+                Session["login"] = login;
+                Session["username"] = username;
+                Session["AccessLevel"] = AccessLevel;
+                //Response.Redirect("../index.cshtml");
+                //Debug only
+                Response.AddHeader("REFRESH", "5.5;URL=../index.cshtml");
+            }
+        }
+
     </div>
 
 </body>

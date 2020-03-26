@@ -156,7 +156,6 @@
     <Content Include="Shared\_Footer.cshtml" />
     <Content Include="Shared\_MusicPlayer.cshtml" />
     <Content Include="Pages\Login.cshtml" />
-    <Content Include="Pages\AccountAanmaken.cshtml" />
     <Content Include="Shared\EmbedTutorial.cshtml" />
     <Content Include="Pages\Logout.cshtml" />
     <Content Include="Pages\Songs\EdditSong.cshtml" />

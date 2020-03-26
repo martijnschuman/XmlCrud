@@ -1,0 +1,33 @@
+﻿@using System.Data;
+@using XmlCrud.App_Code;
+
+@{
+    SongMethods mySongMethods = Session["playlistClass"] as SongMethods;
+    string file = Session["file"] as string;
+}
+
+<div id="overlay"></div>
+<div id="divBox" class="divBox">
+    <i onclick="closeOverlay()" id="close" class="fa fa-times-circle"></i>
+
+    <p id="EditSongWarning">LET OP!</p>
+    <br />
+    <p>Weet u zeker dat u dit nummer wil aanpassen?</p>
+    <form id="EditSong" method="post">
+        Ja <input type="radio" name="EditSong" value="ja" />
+        Nee <input type="radio" name="EditSong" value="Nee" checked="checked" />
+        <input type="hidden" name="EditSongId" id="EditSongHiddenInput" value="" />
+        <input type="submit" class="submit" id="EditSongSubmit" value="Verder" />
+    </form>
+</div>
+
+@if (IsPost)
+{
+    if (Request.Form["EditSong"] == "ja")
+    {
+        string id = Request.Form["EditSongId"];
+        mySongMethods.DeleteSong(id, file);
+    }
+
+    Response.Redirect(@"~/index.cshtml");
+}

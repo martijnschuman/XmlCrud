@@ -24,12 +24,13 @@ function MusicPlayerInfo(titleAtr, artistAtr, albumAtr, coverAtr, fileLocation) 
     var cover = document.getElementById("songCoverImage");
 
     var songLink = document.getElementById("video");
+    var playListIcon = document.getElementById("PlayListImg");
 
     title.innerHTML = titleAtr;
     artist.innerHTML = artistAtr;
     album.innerHTML = albumAtr;
     cover.src = coverAtr;
-
+    playListIcon.src = coverAtr;
 
     pause.style.display = "none";
     play.style.setProperty('display', 'block', 'important');

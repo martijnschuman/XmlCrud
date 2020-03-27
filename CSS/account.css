@@ -1,124 +1,35 @@
-/*Signin check voor signup*/
-/*Achtergrond*/
-.overlay{
+﻿.loginFormDiv{
+    width: 350px;
+    position: absolute;
+    left: 200px;
+    top: 250px;
+    z-index: 3 !important;
+}
+
+#accountLink {
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+.loginVideoBackground {
     position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
 
-/*Div met tekst/knoppen*/
-.signinCheck{
-    width: 550px;
-    height: 130px;
-    position: relative;
-    top: 150px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: gray;
-    border-radius: 15px;
-}
+.loginIMGBackground{
+    position: fixed;
+    z-index: 2;
+    opacity: 0.75;
 
-/*Title*/
-#signinCheckTitle{
-    color: red;
 }
-
-/*Tekst*/
-#signinCheckTekst{
-    color: white;
-}
-
-:root{
-    --signinCheckLogoutBottom: 10px;
-}
-
-/*Uitloggen knop*/
-#signinCheckLogout{
+#InloggenLink{
     position: absolute;
-    left: 125px;
-    bottom: var(--signinCheckLogoutBottom);
+    top: 75%;
 }
 
-/*Vorige pagina knop*/
-#signinCheckLastPage{
+/*Login link index pagina*/
+.loginLink{
     position: absolute;
-    left: 235px;
-    bottom: var(--signinCheckLogoutBottom);
-}
-
-/*Login/signup error message*/
-#accountError{
-    text-align: center;
-    color: white;
-    background-color: rgba(255, 45, 45, 0.8);
-    padding: 10px;
-    margin-bottom: 10px;
-    font-style: 16px;
-    border: 3px solid darkred;
-    border-radius: 10px;
-}
-
-
-
-/*Input veld*/
-.accountInputBox{
-	width: 88.6%;
-    padding: 12 10 10;
-	margin: 0px 0px 10px 0px;
-	display: inline-block;
-    border: none; 
-}
-
-/*Positie login/signup submit knop*/
-#accountSubmit{
-    margin: 0 auto;
-}
-
-/*Login*/
-/***************************************************************************************************************************************************************************/
-/*Opmaak van de wachtwoord reset link*/
-#wachtwoordResetLink{
-    position: relative;
-    left: 56%;
-    margin-top: -25px;
-}
-
-/*Signup*/
-/***************************************************************************************************************************************************************************/
-/*Link naar de login pagina mocht er nog een account zijn.*/
-#signupLoginLink{
-    position: relative;
-    left: 82%;
-}
-
-/*PWD reset*/
-/***************************************************************************************************************************************************************************/
-/*Tekst op de pagina*/
-#accountPwdResetTekst{
-    color: white;
-    text-align: center;
-}
-
-#accountSuccess{
-    text-align: center;
-    color: white;
-    background-color: rgba(0, 255, 0, 0.8);
-    padding: 10px;
-    margin-bottom: 10px;
-    font-style: 16px;
-    border: 3px solid darkgreen;
-    border-radius: 10px;
-}
-
-/*Error message wanneer er geen validater/token aanwezig zijn*/
-#accountPwdRestError{
-    color: red;
-    text-align: center;
-    font-size: 18px;
+    top: 5px;
+    right: 5px;
 }

@@ -1,14 +1,14 @@
 ﻿.MusicPlayer {
     background-color: rgba(58, 59, 58, 0.8);
     width: 100%;
-    height: 95px;
-    position: absolute;
+    height: 90px;
+    position: fixed;
     bottom: 0px;
 }
 
 /*Opent/sluit muziek speler*/
 .MusicPlayerOpen{
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     right: 5px;
     font-size: 23px !important;
@@ -30,7 +30,7 @@
 .SongInfo {
     position: absolute;
     top: 10px;
-    left: 6%;
+    left: 5.5%;
 }
 
 #MusicPlayerTitle {

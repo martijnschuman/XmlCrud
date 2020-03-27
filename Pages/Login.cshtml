@@ -22,10 +22,10 @@
             string username = Request.Form["username"];
             string pwd = Request.Form["pwd"];
 
-            string usernameSmartie = "smartie";
-            string pwdSmartie = "smartiepwd";
-            string usernameSqalley = "sqalley";
-            string pwdSqalley = "sqalleypwd";
+            string usernameSmartie = "Smartie";
+            string pwdSmartie = "Smartiepwd";
+            string usernameSqalley = "Sqalley";
+            string pwdSqalley = "Sqalleypwd";
 
             int login = 0;
 
@@ -43,7 +43,7 @@
 
                 //Response.Redirect("../index.cshtml");
                 //Debug only
-                Response.AddHeader("REFRESH", "5;URL=../index.cshtml");
+                Response.AddHeader("REFRESH", "3;URL=../index.cshtml");
             }
             else
             {
@@ -60,7 +60,7 @@
             <div class="formInputContainer">
                 <i class="fa fa-key formIcon"></i><input class="InputBox" type="password" placeholder="Wachwoord" name="pwd" />
             </div>
-            <a class="smallLink" id="wachtwoordResetLinkLogin" href="~/Pages/pwdReset.cshtml">Wachtwoord vergeten?</a>
+            <a class="smallLink" id="accountLink" href="~/Pages/pwdReset.cshtml">Wachtwoord vergeten?</a>
             <input type="submit" class="submit" id="loginSubmit" value="Inloggen" />
         </form>
     </div>

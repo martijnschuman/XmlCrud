@@ -136,8 +136,6 @@ a:link, a:visited, a:hover, a:active {
     display: block;
     font-size: 14px;
     width: 155px;
-    margin-top: -5px;
-    margin-bottom: 10px;
     color: rgb(145, 145, 145) !important;
     transition: color 0.2s ease;
 }
@@ -194,7 +192,7 @@ a:link, a:visited, a:hover, a:active {
 
 /*Footer opmaak*/
 .footer {
-    position: absolute;
+    position: fixed !important;
     width: 100%;
     bottom: 0px;
     background-color: rgba(58, 59, 58, 0.8);

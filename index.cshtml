@@ -4,8 +4,19 @@
 @using XmlCrud.App_Code;
 
 @{
+    if (Session["login"] != null)
+    {
+
+    }
+    else
+    {
+        Response.Redirect(@"~/Pages/Login.cshtml");
+    }
+
     SongMethods mySongMethods = new SongMethods();
-    string file = @"~\App_Data\PlayList.xml";
+    //string file = @"~\App_Data\PlayList.xml";
+    string playList = Session["playlist"].ToString();
+    string file = @"~\App_Data\" + playList + ".xml";
     DataSet ds = mySongMethods.GetAllSongs(file);
     Session["playlistClass"] = mySongMethods;
     Session["file"] = file;
@@ -15,15 +26,6 @@
     int lastId = int.Parse(lastRow["id"].ToString());
     int nextId = lastId + 1;
     Session["nextID"] = nextId;
-
-    if (Session["login"] != null)
-    {
-        
-    }
-    else
-    {
-        Response.Redirect(@"~/Pages/Login.cshtml");
-    }
 }
 
 <html>
@@ -66,7 +68,7 @@
                 <td class="tableAlbum">@dr["album"]</td>
                 <td background="@dr["cover"]" class="songCoverImage"></td>
                 <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash playListIcon"></i></a></td>
-                <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash playListIcon"></i></a></td>
+                <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-edit playListIcon"></i></a></td>
                 <td class="TableEmptyTD"></td>
             </tr>
         }

@@ -4,11 +4,6 @@
 @using XmlCrud.App_Code;
 @using System.IO;
 
-@{
-    SongMethods mySongMethods = Session["playlistClass"] as SongMethods;
-    string file = Session["file"] as string;
-}
-
 <html>
 @RenderPage("~/Shared/_Header.cshtml")
 <body>
@@ -23,6 +18,52 @@
     <div class="loginFormDiv">
         <p id="formTitle">PlayMusic</p>
         <p id="formSubTitle">Inloggen</p>
+        @if (IsPost)
+        {
+
+            string username = Request.Form["username"];
+            string pwd = Request.Form["pwd"];
+
+            string usernameSmartie = "smartie";
+            string pwdSmartie = "smartiepwd";
+
+            string usernameSqalley = "sqalley";
+            string pwdSqalley = "sqalleypwd";
+
+            int login = 0;
+            int AccessLevel = 0;
+
+            <b>Debug only</b>
+            <p>In post</p>
+            <p>Form username = @Request.Form["username"]</p>
+            <p>Form pwd = @Request.Form["pwd"]</p>
+
+            if (((username == usernameSmartie) && (pwd == pwdSmartie)) || ((username == usernameSqalley) && (pwd == pwdSqalley)))
+            {
+                AccessLevel = 1;
+                login = 1;
+                Session["login"] = login;
+                Session["username"] = username;
+                Session["AccessLevel"] = AccessLevel;
+                Session["playlist"] = username + "PlayList";
+
+                <div id='formSuccess'>
+                    <p>Inloggen gelukt!</p>
+                    <p>U wordt automatisch doorgestuurd</p>
+                </div>
+
+                //Response.Redirect("../index.cshtml");
+                //Debug only
+                Response.AddHeader("REFRESH", "5.5;URL=../index.cshtml");
+            }
+            else
+            {
+                <div id='formError'>
+                    <p>ERROR!</p>
+                    <p>Login gegevens incorrect!</p>
+                </div>
+            }
+        }
         <form method="post">
             <div class="formInputContainer">
                 <i class="fa fa-user formIcon"></i><input class="InputBox" type="text" placeholder="Gebruikersnaam" name="username" />
@@ -33,39 +74,6 @@
             <a class="smallLink" id="wachtwoordResetLinkLogin" href="?wachtwoordreset">Wachtwoord vergeten?</a>
             <input type="submit" class="submit" id="loginSubmit" value="Inloggen" />
         </form>
-
-        @if (IsPost)
-        {
-
-            string username = Request.Form["username"];
-            string pwd = Request.Form["pwd"];
-
-            string usernameAdmin = "smartie";
-            string usernamePwd = "smartiepwd";
-
-            int login = 0;
-            int AccessLevel = 0;
-
-            <b>Debug only</b>
-            <p>In post</p>
-            <p>Form username = @Request.Form["username"]</p>
-            <p>Form pwd = @Request.Form["pwd"]</p>
-            <p>Hardcode username = @usernameAdmin</p>
-            <p>Hardcode pwd = @usernamePwd</p>
-
-            if (username == usernameAdmin && pwd == usernamePwd)
-            {
-                AccessLevel = 1;
-                login = 1;
-                Session["login"] = login;
-                Session["username"] = username;
-                Session["AccessLevel"] = AccessLevel;
-                //Response.Redirect("../index.cshtml");
-                //Debug only
-                Response.AddHeader("REFRESH", "5.5;URL=../index.cshtml");
-            }
-        }
-
     </div>
 
 </body>

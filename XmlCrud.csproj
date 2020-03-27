@@ -92,6 +92,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\sqalleyPlayList.xml" />
+    <Content Include="App_Data\smartiePlayList.xml" />
     <Content Include="App_Data\PlayList.xml" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />

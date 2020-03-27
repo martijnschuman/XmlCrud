@@ -9,12 +9,7 @@
 #wachtwoordResetLinkLogin {
     position: relative;
     left: 56%;
-    margin-top: -25px;
-}
-#wachtwoordResetLinkSignup {
-    position: relative;
-    left: 50%;
-    margin-top: -25px;
+    margin-top: -5px;
 }
 
 #signupLoginLink {

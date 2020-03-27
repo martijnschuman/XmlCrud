@@ -161,6 +161,7 @@
     <Content Include="Shared\EmbedTutorial.cshtml" />
     <Content Include="Pages\Logout.cshtml" />
     <Content Include="Pages\Songs\EdditSong.cshtml" />
+    <Content Include="Pages\pwdReset.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -38,6 +38,7 @@
                         dr[3] = Request.Form["album"];
                         dr[4] = Request.Form["cover"];
                         dr[5] = Request.Form["fileLocation"];
+                        dr[6] = Request.Form["afspeelDuur"];
 
                         mySongMethods.CreateSong(dr, file);
                         <div id='formSuccess'>
@@ -47,8 +48,6 @@
                         Response.AddHeader("REFRESH", "5.5;URL=../index.cshtml");
                         //Pagina 16
                     }
-
-
                 }
 
                 <div class="formInputContainer">
@@ -68,6 +67,9 @@
                 </div>
                 <div class="formInputContainer">
                     <i class="fa fa-file formIcon"></i><input class="InputBox" type="text" placeholder="Bestand locatie" name="fileLocation" />
+                </div>
+                <div class="formInputContainer">
+                    <i class="fa fa-file formIcon"></i><input class="InputBox" type="text" placeholder="Afspeel Duur" name="afspeelDuur" />
                 </div>
                 <p class="formWarning">Alleen YouTube embed links toegestaan!</p>
                 <a class="formEmbedLink" href="../Shared/EmbedTutorial.cshtml" target="popup" onclick="window.open('../Shared/EmbedTutorial.cshtml','popup','width=600,height=600'); return false;">Hoe krijg ik een embed link?</a>

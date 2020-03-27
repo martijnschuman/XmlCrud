@@ -12,6 +12,11 @@
     margin-top: -5px;
 }
 
+#LinkLogin {
+    margin-top: -8px;
+    margin-bottom: 0px;
+}
+
 #signupLoginLink {
     position: relative;
     left: 82%;

@@ -7,7 +7,6 @@
 <html>
 @RenderPage("~/Shared/_Header.cshtml")
 <body>
-    
     <div>
         <img src="~/Pages/Login/loginBackground.png" class="loginIMGBackground"/>
         <video class="loginVideoBackground" autoplay muted loop>
@@ -20,31 +19,21 @@
         <p id="formSubTitle">Inloggen</p>
         @if (IsPost)
         {
-
             string username = Request.Form["username"];
             string pwd = Request.Form["pwd"];
 
             string usernameSmartie = "smartie";
             string pwdSmartie = "smartiepwd";
-
             string usernameSqalley = "sqalley";
             string pwdSqalley = "sqalleypwd";
 
             int login = 0;
-            int AccessLevel = 0;
-
-            <b>Debug only</b>
-            <p>In post</p>
-            <p>Form username = @Request.Form["username"]</p>
-            <p>Form pwd = @Request.Form["pwd"]</p>
 
             if (((username == usernameSmartie) && (pwd == pwdSmartie)) || ((username == usernameSqalley) && (pwd == pwdSqalley)))
             {
-                AccessLevel = 1;
                 login = 1;
                 Session["login"] = login;
                 Session["username"] = username;
-                Session["AccessLevel"] = AccessLevel;
                 Session["playlist"] = username + "PlayList";
 
                 <div id='formSuccess'>
@@ -54,7 +43,7 @@
 
                 //Response.Redirect("../index.cshtml");
                 //Debug only
-                Response.AddHeader("REFRESH", "5.5;URL=../index.cshtml");
+                Response.AddHeader("REFRESH", "5;URL=../index.cshtml");
             }
             else
             {
@@ -71,7 +60,7 @@
             <div class="formInputContainer">
                 <i class="fa fa-key formIcon"></i><input class="InputBox" type="password" placeholder="Wachwoord" name="pwd" />
             </div>
-            <a class="smallLink" id="wachtwoordResetLinkLogin" href="?wachtwoordreset">Wachtwoord vergeten?</a>
+            <a class="smallLink" id="wachtwoordResetLinkLogin" href="~/Pages/pwdReset.cshtml">Wachtwoord vergeten?</a>
             <input type="submit" class="submit" id="loginSubmit" value="Inloggen" />
         </form>
     </div>

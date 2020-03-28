@@ -7,6 +7,7 @@
 <html>
 @RenderPage("~/Shared/_Header.cshtml")
 <body>
+    <script src="~/Scripts/Login.js"></script>
     <div>
         <img src="~/Pages/Login/loginBackground.png" class="loginIMGBackground"/>
         <video class="loginVideoBackground" autoplay muted loop>
@@ -40,9 +41,6 @@
                     <p>Inloggen gelukt!</p>
                     <p>U wordt automatisch doorgestuurd</p>
                 </div>
-
-                //Response.Redirect("../index.cshtml");
-                //Debug only
                 Response.AddHeader("REFRESH", "3;URL=../index.cshtml");
             }
             else
@@ -58,7 +56,8 @@
                 <i class="fa fa-user formIcon"></i><input class="InputBox" type="text" placeholder="Gebruikersnaam" name="username" />
             </div>
             <div class="formInputContainer">
-                <i class="fa fa-key formIcon"></i><input class="InputBox" type="password" placeholder="Wachwoord" name="pwd" />
+                <i class="fa fa-key formIcon"></i><input class="InputBox" type="password" placeholder="Wachwoord" id="pwdInput" name="pwd" />
+                <i class="fa fa-eye pwdShow" id="pwdShow" onmouseover="pwdShow()" onmouseleave="pwdShow()"></i>
             </div>
             <a class="smallLink" id="accountLink" href="~/Pages/pwdReset.cshtml">Wachtwoord vergeten?</a>
             <input type="submit" class="submit" id="loginSubmit" value="Inloggen" />

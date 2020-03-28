@@ -24,7 +24,8 @@
 
 @if (IsPost)
 {
-    if (Request.Form["DeleteSong"] == "ja")
+    string keuze = Request.Form["DeleteSong"];
+    if (keuze == "ja")
     {
         string id = Request.Form["DeleteSongId"];
         mySongMethods.DeleteSong(id, file);

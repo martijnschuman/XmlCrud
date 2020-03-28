@@ -37,7 +37,6 @@ function MusicPlayerInfo(titleAtr, artistAtr, albumAtr, coverAtr, fileLocation) 
     songLink.src = fileLocation + "?enablejsapi=1&html5=1";
 
     MusicPlayerMaxTime();
-
 }
 
 /*Veranderd play-pauze knop*/
@@ -76,6 +75,7 @@ function SetVolume(value) {
     player.setVolume(value);
 }
 
+/*Huidige tijd */
 function MusicPlayerCurrentTime() {
     var currentTIme = document.getElementById("MusicPlayerCurrentTime");
     var fill = document.getElementById("fill");
@@ -92,6 +92,7 @@ function MusicPlayerCurrentTime() {
     currentTIme.innerHTML = timeString;
 }
 
+/**Max tijd */
 function MusicPlayerMaxTime() {
     var MusicPlayerMaxTime = document.getElementById("MusicPlayerMaxTime");
 

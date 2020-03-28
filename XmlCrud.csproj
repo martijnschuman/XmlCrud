@@ -142,6 +142,7 @@
     <Content Include="CSS\Fonts\Roboto_Mono\RobotoMono-ThinItalic.ttf" />
     <Content Include="Scripts\DeleteSong.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\Login.js" />
     <Content Include="Scripts\MusicPlayer.js" />
     <Content Include="Web.config" />
   </ItemGroup>

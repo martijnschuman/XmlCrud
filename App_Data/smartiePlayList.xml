@@ -152,4 +152,12 @@
     <cover>https://www.top40.nl/media/cache/related/uploads/subtitle/38780/original.jpg</cover>
     <fileLocation>https://www.youtube.com/embed/gsGn1dzITD0</fileLocation>
   </songs>
+  <songs>
+    <id>20</id>
+    <title>Wow</title>
+    <artist>Post Malone</artist>
+    <album>Wow</album>
+    <cover>https://i.ytimg.com/vi/D0i23wZ0IeE/maxresdefault.jpg</cover>
+    <fileLocation>https://www.youtube.com/embed/393C3pr2ioY</fileLocation>
+  </songs>
 </playlist>

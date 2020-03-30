@@ -10,7 +10,7 @@
     }
     else
     {
-        Response.Redirect(@"~/Pages/Login.cshtml");
+        Response.Redirect(@"~/Pages/Account/Login");
     }
 
     SongMethods mySongMethods = new SongMethods();
@@ -33,7 +33,7 @@
 <body>
     @RenderPage("~/Pages/DeleteSong.cshtml")
 
-    <a class="loginLink" href="~/Pages/Logout.cshtml">Logout</a>
+    <a class="loginLink" href="~/Pages/Account/Logout.cshtml">Logout</a>
 
     <script src="~/Scripts/MusicPlayer.js"></script>
     <div id="PlayListInfo">
@@ -72,7 +72,7 @@
         </tr>
         }
     </table>
-    <br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br />
     <span title="Open muziek speler">
         <i onclick="MusicPlayerOpen()" id="MusicPlayerOpen" class="fa fa-arrow-up MusicPlayerOpen"></i>
     </span>

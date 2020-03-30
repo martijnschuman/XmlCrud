@@ -110,9 +110,7 @@
     <Content Include="Images\Achtergrond.jpg" />
     <Content Include="Images\EmbedLinkTuturial.png" />
     <Content Include="Images\icon.ico" />
-    <Content Include="Pages\Login\loginBackground.png" />
-    <Content Include="Pages\Login\LoginVideo.m4v" />
-    <Content Include="Pages\Login\LoginVideo.webm" />
+    <Content Include="Pages\Account\AccountVideo.webm" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
@@ -144,6 +142,7 @@
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Scripts\Login.js" />
     <Content Include="Scripts\MusicPlayer.js" />
+    <Content Include="Features.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -156,11 +155,12 @@
     <Content Include="Shared\_Header.cshtml" />
     <Content Include="Shared\_Footer.cshtml" />
     <Content Include="Shared\_MusicPlayer.cshtml" />
-    <Content Include="Pages\Login.cshtml" />
+    <Content Include="Pages\Account\Login.cshtml" />
     <Content Include="Shared\EmbedTutorial.cshtml" />
-    <Content Include="Pages\Logout.cshtml" />
+    <Content Include="Pages\Account\Logout.cshtml" />
     <Content Include="Pages\Songs\EdditSong.cshtml" />
-    <Content Include="Pages\pwdReset.cshtml" />
+    <Content Include="Pages\Account\pwdReset.cshtml" />
+    <Content Include="Pages\Account\signup.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

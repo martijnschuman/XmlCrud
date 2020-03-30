@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+@using System.Data;
+@using XmlCrud.App_Code;
+@using System.IO;
+
+<html>
+@RenderPage("~/Shared/_Header.cshtml")
+<body>
+    <script src="~/Scripts/Login.js"></script>
+    <div>
+        <div class="loginBackground"></div>
+        <video class="loginVideoBackground" autoplay muted loop>
+            <source src="~/Pages/Account/AccountVideo.webm" type="video/mp4">
+            Geen video beschikbaar
+        </video>
+    </div>
+    <div class="loginFormDiv">
+        <p id="loginFormTitle">PlayMusic</p>
+        <p id="loginFormSupTitle">Wachtwoord Reset</p>
+        @if (IsPost)
+        {
+            string email = Request.Form["email"];
+            string username = Request.Form["username"];
+
+            <div class="loginFormMessage" id='formSuccess'>
+                <p>Reset mail verzonden!</p>
+                <p>U wordt automatisch terug gestuurd</p>
+            </div>
+            Response.AddHeader("REFRESH", "3;URL=login");
+        }
+        <form method="post">
+            <div class="formInputContainer">
+                <i class="fa fa-user formIcon"></i><input class="InputBox" type="text" placeholder="Gebruikersnaam" name="username" />
+            </div>
+            <div class="formInputContainer">
+                <i class="fa fa-envelope formIcon"></i><input class="InputBox" type="text" placeholder="Email adres" name="email" />
+            </div>
+            <a class="smallLink" href="~/Pages/Account/Login">Inloggen</a>
+            <a class="smallLink" id="accountSignupLink" href="~/Pages/Account/signup">Account aanmaken</a>
+            <div class="emptyRows"></div>
+            <input type="submit" id="loginSubmit" value="Verzenden" />
+        </form>
+    </div>
+
+</body>
+@RenderPage("~/Shared/_Footer.cshtml")
+</html>

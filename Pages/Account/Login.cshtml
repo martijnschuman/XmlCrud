@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+
+@using System.Data;
+@using XmlCrud.App_Code;
+@using System.IO;
+
+<html>
+@RenderPage("~/Shared/_Header.cshtml")
+<body>
+    <script src="~/Scripts/Login.js"></script>
+    <div>
+        <div class="loginBackground"></div>
+        <video class="loginVideoBackground" autoplay muted loop>
+            <source src="~/Pages/Account/AccountVideo.webm" type="video/mp4">
+            Geen video beschikbaar
+        </video>
+    </div>
+    <div class="loginFormDiv">
+        <p id="loginFormTitle">PlayMusic</p>
+        <p id="loginFormSupTitle">Inloggen</p>
+        @if (IsPost)
+        {
+            string username = Request.Form["username"];
+            string pwd = Request.Form["pwd"];
+
+            string usernameSmartie = "Smartie";
+            string pwdSmartie = "Smartiepwd";
+            string usernameSqalley = "Sqalley";
+            string pwdSqalley = "Sqalleypwd";
+
+            int login = 0;
+
+            if (((username == usernameSmartie) && (pwd == pwdSmartie)) || ((username == usernameSqalley) && (pwd == pwdSqalley)))
+            {
+                login = 1;
+                Session["login"] = login;
+                Session["username"] = username;
+                Session["playlist"] = username + "PlayList";
+
+                <div class="loginFormMessage" id='formSuccess'>
+                    <p>Inloggen gelukt!</p>
+                    <p>U wordt automatisch doorgestuurd</p>
+                </div>
+                Response.AddHeader("REFRESH", "3;URL=../../index");
+            }
+            else
+            {
+                <div class="loginFormMessage" id='formError'>
+                    <p>ERROR!</p>
+                    <p>Login gegevens incorrect!</p>
+                </div>
+            }
+        }
+        <form method="post">
+            <div class="formInputContainer">
+                <i class="fa fa-user formIcon"></i><input class="InputBox" type="text" placeholder="Gebruikersnaam" name="username" />
+            </div>
+            <div class="formInputContainer">
+                <i class="fa fa-key formIcon"></i><input class="InputBox" type="password" placeholder="Wachwoord" id="pwdInput" name="pwd" />
+                <i class="fa fa-eye pwdShow" id="pwdShow" onmouseover="pwdShow()" onmouseleave="pwdShow()"></i>
+            </div>
+            <a class="smallLink" href="~/Pages/Account/pwdReset">Wachtwoord vergeten</a>
+            <a class="smallLink" id="accountSignupLink" href="~/Pages/Account/signup">Account aanmaken</a>
+            <div class="emptyRows"></div>
+            <input type="submit" id="loginSubmit" value="Inloggen" />
+        </form>
+    </div>
+
+</body>
+@RenderPage("~/Shared/_Footer.cshtml")
+</html>

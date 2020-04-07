@@ -24,19 +24,19 @@ function MusicPlayerInfo(titleAtr, artistAtr, albumAtr, coverAtr, fileLocation) 
     var cover = document.getElementById("songCoverImage");
 
     var songLink = document.getElementById("video");
+    var playListIcon = document.getElementById("PlayListImg");
 
     title.innerHTML = titleAtr;
     artist.innerHTML = artistAtr;
     album.innerHTML = albumAtr;
     cover.src = coverAtr;
-
+    playListIcon.src = coverAtr;
 
     pause.style.display = "none";
     play.style.setProperty('display', 'block', 'important');
     songLink.src = fileLocation + "?enablejsapi=1&html5=1";
 
     MusicPlayerMaxTime();
-
 }
 
 /*Veranderd play-pauze knop*/
@@ -75,6 +75,7 @@ function SetVolume(value) {
     player.setVolume(value);
 }
 
+/*Huidige tijd */
 function MusicPlayerCurrentTime() {
     var currentTIme = document.getElementById("MusicPlayerCurrentTime");
     var fill = document.getElementById("fill");
@@ -91,6 +92,7 @@ function MusicPlayerCurrentTime() {
     currentTIme.innerHTML = timeString;
 }
 
+/**Max tijd */
 function MusicPlayerMaxTime() {
     var MusicPlayerMaxTime = document.getElementById("MusicPlayerMaxTime");
 

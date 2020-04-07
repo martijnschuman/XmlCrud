@@ -1,0 +1,9 @@
+﻿features:
+één globale shared opmaak voor alle pagina's
+url rewrite, dus geen .cshtml
+login systeem
+afspeellijst per gebruiker
+nummers toevoegen
+nummers verwijderen
+nummers aanpassen
+nummers afspeelbaar doormiddel van js/yt api

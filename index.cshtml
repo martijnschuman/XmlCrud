@@ -4,25 +4,28 @@
 @using XmlCrud.App_Code;
 
 @{
+    if (Session["login"] != null)
+    {
+
+    }
+    else
+    {
+        Response.Redirect(@"~/Pages/Account/Login");
+    }
+
     SongMethods mySongMethods = new SongMethods();
-    string file = @"~\App_Data\PlayList.xml";
+    //string file = @"~\App_Data\PlayList.xml";
+    string playList = Session["playlist"].ToString();
+    string file = @"~\App_Data\" + playList + ".xml";
     DataSet ds = mySongMethods.GetAllSongs(file);
     Session["playlistClass"] = mySongMethods;
     Session["file"] = file;
+    string playListUser = Session["username"].ToString()+"s";
 
     DataRow lastRow = ds.Tables["songs"].Rows[ds.Tables["songs"].Rows.Count - 1];
     int lastId = int.Parse(lastRow["id"].ToString());
     int nextId = lastId + 1;
     Session["nextID"] = nextId;
-
-    if (Session["login"] != null)
-    {
-        
-    }
-    else
-    {
-        Response.Redirect(@"~/Pages/Login.cshtml");
-    }
 }
 
 <html>
@@ -30,16 +33,16 @@
 <body>
     @RenderPage("~/Pages/DeleteSong.cshtml")
 
-    <a class="loginLink" href="~/Pages/Logout.cshtml">Logout</a>
+    <a class="loginLink" href="~/Pages/Account/Logout.cshtml">Logout</a>
 
     <script src="~/Scripts/MusicPlayer.js"></script>
     <div id="PlayListInfo">
         <img id="PlayListImg" src="~/Images/PlayList1.jpg" />
         <h3 id="PlayListSubTitle">Afspeellijst</h3>
-        <h1 id="PlayListTitle">PlayMusic</h1>
+        <h1 id="PlayListTitle">@playListUser Music</h1>
         <p id="PlayListGeneralInfo">@lastId nummers, 00 uur en 00 minuten</p>
         <a id="SongToevoegen" href="~/Pages/CreateSong.cshtml">Nummer toevoegen</a>
-        <iframe id="video" width="375" height="210" src="https://www.youtube.com/embed/r_0JjYUe5jo?enablejsapi=1&html5=1" frameborder="0" allow="encrypted-media;"></iframe>
+        <iframe id="video" width="357" height="200" src="https://www.youtube.com/embed/r_0JjYUe5jo?enablejsapi=1&html5=1" frameborder="0" allow="encrypted-media;"></iframe>
     </div>
     <table class="PlayList">
         <tr>
@@ -49,28 +52,27 @@
             <td class="tableTitle">Title</td>
             <td>Artiest</td>
             <td>Album</td>
-
             <td>Cover</td>
             <td class="TableEmptyTD"></td>
         </tr>
         @foreach (DataRow dr in ds.Tables["songs"].Rows)
         {
-            <tr><th colspan="8" class="bordered"></th></tr>
-            <tr class="playListRow" ondblclick="MusicPlayerInfo('@dr["title"]', '@dr["artist"]', '@dr["album"]', '@dr["cover"]', '@dr["fileLocation"]')">
-                <td class="TableEmptyTD"></td>
-                <td>@dr["id"]</td>
-                <td class="TableEmptyTD"></td>
-                <td class="tableTitle">@dr["title"]</td>
-                <td class="tableArtist">@dr["artist"]</td>
-                <td class="tableAlbum">@dr["album"]</td>
-                <td background="@dr["cover"]" class="songCoverImage"></td>
-                <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash playListIcon"></i></a></td>
-                <td><a onclick="openOverlayEdit('@dr["id"]')">edit song</a></td>
-                <td class="TableEmptyTD"></td>
-            </tr>
+        <tr><th colspan="9" class="bordered"></th></tr>
+        <tr class="playListRow" ondblclick="MusicPlayerInfo('@dr["title"]', '@dr["artist"]', '@dr["album"]', '@dr["cover"]', '@dr["fileLocation"]')">
+            <td class="TableEmptyTD"></td>
+            <td>@dr["id"]</td>
+            <td class="TableEmptyTD"></td>
+            <td class="tableTitle">@dr["title"]</td>
+            <td class="tableArtist">@dr["artist"]</td>
+            <td class="tableAlbum">@dr["album"]</td>
+            <td background="@dr["cover"]" class="songCoverImage"></td>
+            <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash playListIcon"></i></a></td>
+            <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-edit playListIcon"></i></a></td>
+            <td class="TableEmptyTD"></td>
+        </tr>
         }
     </table>
-
+    <br /><br /><br /><br /><br />
     <span title="Open muziek speler">
         <i onclick="MusicPlayerOpen()" id="MusicPlayerOpen" class="fa fa-arrow-up MusicPlayerOpen"></i>
     </span>

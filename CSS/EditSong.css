@@ -1,4 +1,4 @@
-﻿#overlay {
+﻿#overlay1 {
     position: fixed;
     display: none;
     width: 100%;
@@ -11,13 +11,13 @@
     z-index: 1;
 }
 
-#divBox {
+#divBox1 {
     background-color: gray;
     z-index: 3;
     flex-direction: column;
     position: absolute;
     left: 41%;
-    top: -200px;    
+    top: -200px;
     width: 350px;
     height: 165px;
     text-align: center;
@@ -25,28 +25,28 @@
     transition: 0.6s;
 }
 
-#close {
+#close1 {
     position: absolute;
     top: 5px;
     right: 5px;
     font-size: 16px;
 }
 
-    #close:hover {
+    #close1:hover {
         cursor: pointer;
     }
 
-#DeleteSongWarning{
+#EditSongWarning {
     color: red;
     font-size: 30px;
     font-weight: bold;
 }
 
 /*Margin van form*/
-#DeleteSong{
+#EditSong {
     margin-top: 10px;
 }
 
-#DeleteSongSubmit{
+#EditSongSubmit {
     margin-top: 10px;
 }

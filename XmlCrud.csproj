@@ -100,6 +100,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="CSS\DeleteSong.css" />
+    <Content Include="CSS\EditSong.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\PlayList.css" />
     <Content Include="CSS\style.css" />
@@ -141,6 +142,7 @@
     <Content Include="CSS\Fonts\Roboto_Mono\RobotoMono-ThinItalic.ttf" />
     <Content Include="Pages\Songs\Song2.mp3" />
     <Content Include="Scripts\DeleteSong.js" />
+    <Content Include="Scripts\EditSong.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Scripts\MusicPlayer.js" />
     <Content Include="Web.config" />
@@ -158,7 +160,7 @@
     <Content Include="Pages\Login.cshtml" />
     <Content Include="Shared\EmbedTutorial.cshtml" />
     <Content Include="Pages\Logout.cshtml" />
-    <Content Include="Pages\Songs\EdditSong.cshtml" />
+    <Content Include="Pages\Songs\EditSong.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

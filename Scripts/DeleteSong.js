@@ -13,6 +13,7 @@
     }
 }
 
+
 function closeOverlay() {
     document.getElementById("divBox").style.top = "-300px";
     document.getElementById("overlay").style.display = 'none';

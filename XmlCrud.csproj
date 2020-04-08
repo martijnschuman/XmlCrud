@@ -160,7 +160,7 @@
     <Content Include="Pages\Account\Login.cshtml" />
     <Content Include="Shared\EmbedTutorial.cshtml" />
     <Content Include="Pages\Account\Logout.cshtml" />
-    <Content Include="Pages\Songs\EditSong.cshtml" />
+    <Content Include="Pages\EditSong.cshtml" />
     <Content Include="Pages\Account\pwdReset.cshtml" />
     <Content Include="Pages\Account\signup.cshtml" />
     <None Include="Web.Debug.config">

@@ -31,8 +31,10 @@
 <html>
 @RenderPage("~/Shared/_Header.cshtml")
 <body>
-    @RenderPage("~/Pages/DeleteSong.cshtml")
-
+    @RenderPage("~/Pages/DeleteSong.cshtml", "~/Pages/EditSong.cshtml")
+    
+    
+    
     <a class="loginLink" href="~/Pages/Account/Logout.cshtml">Logout</a>
 
     <script src="~/Scripts/MusicPlayer.js"></script>
@@ -57,19 +59,19 @@
         </tr>
         @foreach (DataRow dr in ds.Tables["songs"].Rows)
         {
-        <tr><th colspan="9" class="bordered"></th></tr>
-        <tr class="playListRow" ondblclick="MusicPlayerInfo('@dr["title"]', '@dr["artist"]', '@dr["album"]', '@dr["cover"]', '@dr["fileLocation"]')">
-            <td class="TableEmptyTD"></td>
-            <td>@dr["id"]</td>
-            <td class="TableEmptyTD"></td>
-            <td class="tableTitle">@dr["title"]</td>
-            <td class="tableArtist">@dr["artist"]</td>
-            <td class="tableAlbum">@dr["album"]</td>
-            <td background="@dr["cover"]" class="songCoverImage"></td>
-            <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash playListIcon"></i></a></td>
-            <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-edit playListIcon"></i></a></td>
-            <td class="TableEmptyTD"></td>
-        </tr>
+            <tr><th colspan="9" class="bordered"></th></tr>
+            <tr class="playListRow" ondblclick="MusicPlayerInfo('@dr["title"]', '@dr["artist"]', '@dr["album"]', '@dr["cover"]', '@dr["fileLocation"]')">
+                <td class="TableEmptyTD"></td>
+                <td>@dr["id"]</td>
+                <td class="TableEmptyTD"></td>
+                <td class="tableTitle">@dr["title"]</td>
+                <td class="tableArtist">@dr["artist"]</td>
+                <td class="tableAlbum">@dr["album"]</td>
+                <td background="@dr["cover"]" class="songCoverImage"></td>
+                <td><a onclick="openOverlay('@dr["id"]')"><i class="fa fa-trash playListIcon"></i></a></td>
+                <td><a onclick="openOverlayEditSong('@dr["id"]')">Eddit song</a></td>
+                <td class="TableEmptyTD"></td>
+            </tr>
         }
     </table>
     <br /><br /><br /><br /><br />

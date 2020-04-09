@@ -72,7 +72,7 @@ namespace XmlCrud.App_Code
             dr[2] = artist;
             dr[3] = album;
             dr[4] = cover;
-            dr[5] = filelocation;
+            dr[5] = fileLocation;
 
             ds.Tables["songs"].Rows.Add(dr);
             ds.WriteXml(HttpContext.Current.Server.MapPath(file));

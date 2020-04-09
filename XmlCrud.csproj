@@ -95,12 +95,6 @@
     <Content Include="App_Data\sqalleyPlayList.xml" />
     <Content Include="App_Data\smartiePlayList.xml" />
     <Content Include="App_Data\PlayList.xml" />
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="CSS\DeleteSong.css" />
     <Content Include="CSS\account.css" />
     <Content Include="CSS\EditSong.css" />
@@ -112,12 +106,6 @@
     <Content Include="Images\EmbedLinkTuturial.png" />
     <Content Include="Images\icon.ico" />
     <Content Include="Pages\Account\AccountVideo.webm" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Pages\CreateSong.cshtml" />
     <Content Include="Pages\DeleteSong.cshtml" />
     <Content Include="CSS\Fonts\Anton-Regular.ttf" />

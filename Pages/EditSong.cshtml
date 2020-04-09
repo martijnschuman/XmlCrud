@@ -29,7 +29,12 @@
     if (Request.Form["EditSong"] == "ja")
     {
         string id = Request.Form["EditSongId"];
-        mySongMethods.DeleteSong(id, file);
+        string title = Request.Form["EditSongTitle"];
+        string artist = Request.Form["EditSongArtist"];
+        string album = Request.Form["EditSongAlbum"];
+        string cover = Request.Form["EditSongCover"];
+        string fileLocation = Request.Form["EditSongFileLocation"];
+        mySongMethods.EditSong(id, title, artist, album, cover, fileLocation, file);
     }
 
     Response.Redirect(@"~/index.cshtml");

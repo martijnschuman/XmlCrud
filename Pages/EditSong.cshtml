@@ -30,7 +30,9 @@
         string title = Request.Form["EditSongTitle"];
         string artist = Request.Form["EditSongArtist"];
         string album = Request.Form["EditSongAlbum"];
-        mySongMethods.EditSong(id, title, artist, album, file);
+        string cover = Request.Form["EditSongCover"];
+        string fileLocation = Request.Form["EditSongfileLocation"];
+        mySongMethods.EditSong(id, title, artist, album, cover, fileLocation,file);
     }
 
     Response.Redirect(@"~/index.cshtml");

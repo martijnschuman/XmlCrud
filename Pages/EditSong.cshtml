@@ -12,9 +12,9 @@
 
     <p>Nummer bijwerken</p>
     <form id="EditSong" method="post">
-        Title <input type="text" name="EditSongTitle" /><br />
-        Artiest <input type="text" name="EditSongArtist" /><br />
-        Album <input type="text" name="EditSongAlbum" /><br />
+        Title <input type="text" name="title" /><br />
+        Artiest <input type="text" name="artiest" /><br />
+        Album <input type="text" name="album" /><br />
 
         Opslaan <input type="radio" name="EditSong" value="ja" />
         <input type="hidden" name="EditSongId" id="EditSongHiddenInputID" value="" />
@@ -29,12 +29,7 @@
     if (Request.Form["EditSong"] == "ja")
     {
         string id = Request.Form["EditSongId"];
-        string title = Request.Form["EditSongTitle"];
-        string artist = Request.Form["EditSongArtist"];
-        string album = Request.Form["EditSongAlbum"];
-        string cover = Request.Form["EditSongCover"];
-        string fileLocation = Request.Form["EditSongFileLocation"];
-        mySongMethods.EditSong(id, title, artist, album, cover, fileLocation,file);
+        mySongMethods.DeleteSong(id, file);
     }
 
     Response.Redirect(@"~/index.cshtml");

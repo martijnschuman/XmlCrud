@@ -10,17 +10,13 @@
 <div id="divBox1" class="divBox">
     <i onclick="closeOverlayEditSong()" id="close1" class="fa fa-times-circle"></i>
 
-    <p id="EditSongWarning">LET OP!</p>
-    <br />
-    <p>Weet u zeker dat u dit nummer wil aanpassen?</p>
+    <p>Nummer bijwerken</p>
     <form id="EditSong" method="post">
-        ID <input type="text" name="id" /><br />
-        Title <input type="text" name="title" /><br />
-        Artiest <input type="text" name="artiest" /><br />
-        Album <input type="text" name="album" /><br />
+        Title <input type="text" name="EditSongTitle" /><br />
+        Artiest <input type="text" name="EditSongArtist" /><br />
+        Album <input type="text" name="EditSongAlbum" /><br />
 
-        Ja <input type="radio" name="EditSong" value="ja" />
-        Nee <input type="radio" name="EditSong" value="Nee" checked="checked" />
+        Opslaan <input type="radio" name="EditSong" value="ja" />
         <input type="hidden" name="EditSongId" id="EditSongHiddenInput" value="" />
         <input type="submit" class="submit" id="EditSongSubmit" value="Verder" />
     </form>
@@ -31,7 +27,10 @@
     if (Request.Form["EditSong"] == "ja")
     {
         string id = Request.Form["EditSongId"];
-        mySongMethods.DeleteSong(id, file);
+        string title = Request.Form["EditSongTitle"];
+        string artist = Request.Form["EditSongArtist"];
+        string album = Request.Form["EditSongAlbum"];
+        mySongMethods.EditSong(id, title, artist, album, file);
     }
 
     Response.Redirect(@"~/index.cshtml");

@@ -14,7 +14,6 @@
     <br />
     <p>Weet u zeker dat u dit nummer wil aanpassen?</p>
     <form id="EditSong" method="post">
-        ID <input type="text" name="id" /><br />
         Title <input type="text" name="title" /><br />
         Artiest <input type="text" name="artiest" /><br />
         Album <input type="text" name="album" /><br />
@@ -31,7 +30,8 @@
     if (Request.Form["EditSong"] == "ja")
     {
         string id = Request.Form["EditSongId"];
-        mySongMethods.DeleteSong(id, file);
+        string title = Request.Form["EditSongTitle"];
+        mySongMethods.EditSong(id, file);
     }
 
     Response.Redirect(@"~/index.cshtml");

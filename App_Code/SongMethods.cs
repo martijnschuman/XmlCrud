@@ -63,7 +63,6 @@ namespace XmlCrud.App_Code
             DataRow[] drArray = ds.Tables["songs"].Select("id = '" + id + "'");
             if (drArray != null && drArray.Length > 0)
             {
-                drArray[0].Delete();
                 ds.WriteXml(HttpContext.Current.Server.MapPath(file));
             }
         }

@@ -17,7 +17,9 @@
         Album <input type="text" name="EditSongAlbum" /><br />
 
         Opslaan <input type="radio" name="EditSong" value="ja" />
-        <input type="hidden" name="EditSongId" id="EditSongHiddenInput" value="" />
+        <input type="hidden" name="EditSongId" id="EditSongHiddenInputID" value="" />
+        <input type="hidden" name="EditSongCover" id="EditSongHiddenInputCover" value="" />
+        <input type="hidden" name="EditSongFileLocation" id="EditSongHiddenInputFileLocation" value="" />
         <input type="submit" class="submit" id="EditSongSubmit" value="Verder" />
     </form>
 </div>
@@ -31,7 +33,7 @@
         string artist = Request.Form["EditSongArtist"];
         string album = Request.Form["EditSongAlbum"];
         string cover = Request.Form["EditSongCover"];
-        string fileLocation = Request.Form["EditSongfileLocation"];
+        string fileLocation = Request.Form["EditSongFileLocation"];
         mySongMethods.EditSong(id, title, artist, album, cover, fileLocation,file);
     }
 

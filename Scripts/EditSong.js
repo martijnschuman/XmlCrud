@@ -7,6 +7,7 @@
     console.log(cover);
     console.log(filelocation);
     //Debug only
+
     document.getElementById("EditSongHiddenInputID").value = id;
     document.getElementById("EditSongHiddenInputCover").value = cover;
     document.getElementById("EditSongHiddenInputFileLocation").value = filelocation;

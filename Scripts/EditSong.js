@@ -1,4 +1,4 @@
-﻿function openOverlayEditSong(id, cover, filelocation) {
+﻿function openOverlayEditSong(id, title, artist, album,  cover, filelocation) {
     document.getElementById("overlay1").style.display = 'block';
     document.getElementById("divBox1").style.top = "200px";
 
@@ -8,6 +8,10 @@
     console.log(filelocation);
     //Debug only
 
+
+    document.getElementById("EditSongTitle").value = title;
+    document.getElementById("EditSongArtist").value = artist;
+    document.getElementById("EditSongAlbum").value = album;
     document.getElementById("EditSongHiddenInputID").value = id;
     document.getElementById("EditSongHiddenInputCover").value = cover;
     document.getElementById("EditSongHiddenInputFileLocation").value = filelocation;

@@ -58,7 +58,7 @@ namespace XmlCrud.App_Code
             }
         }
         //Pagina 19
-        public void EditSong(string id, string title, string artist, string album, string cover, string filelocation, string file)
+        public void EditSong(string id, string title, string artist, string album, string cover, string fileLocation, string file)
         {
             DataRow[] drArray = ds.Tables["songs"].Select("id = '" + id + "'");
             {

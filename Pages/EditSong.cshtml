@@ -10,17 +10,16 @@
 <div id="divBox1" class="divBox">
     <i onclick="closeOverlayEditSong()" id="close1" class="fa fa-times-circle"></i>
 
-    <p id="EditSongWarning">LET OP!</p>
-    <br />
-    <p>Weet u zeker dat u dit nummer wil aanpassen?</p>
+    <p>Nummer bijwerken</p>
     <form id="EditSong" method="post">
         Title <input type="text" name="title" /><br />
         Artiest <input type="text" name="artiest" /><br />
         Album <input type="text" name="album" /><br />
 
-        Ja <input type="radio" name="EditSong" value="ja" />
-        Nee <input type="radio" name="EditSong" value="Nee" checked="checked" />
-        <input type="hidden" name="EditSongId" id="EditSongHiddenInput" value="" />
+        Opslaan <input type="radio" name="EditSong" value="ja" />
+        <input type="hidden" name="EditSongId" id="EditSongHiddenInputID" value="" />
+        <input type="hidden" name="EditSongCover" id="EditSongHiddenInputCover" value="" />
+        <input type="hidden" name="EditSongFileLocation" id="EditSongHiddenInputFileLocation" value="" />
         <input type="submit" class="submit" id="EditSongSubmit" value="Verder" />
     </form>
 </div>
@@ -30,8 +29,7 @@
     if (Request.Form["EditSong"] == "ja")
     {
         string id = Request.Form["EditSongId"];
-        string title = Request.Form["EditSongTitle"];
-        mySongMethods.EditSong(id, file);
+        mySongMethods.DeleteSong(id, file);
     }
 
     Response.Redirect(@"~/index.cshtml");

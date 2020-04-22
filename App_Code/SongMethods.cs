@@ -86,6 +86,7 @@ namespace XmlCrud.App_Code
                 drArray[0][4] = cover;
                 drArray[0][5] = fileLocation;
             }
+
             ds.Tables["songs"].Rows.Add(drArray);
             ds.WriteXml(HttpContext.Current.Server.MapPath(file));
 

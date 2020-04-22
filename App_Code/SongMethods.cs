@@ -60,7 +60,7 @@ namespace XmlCrud.App_Code
         //Pagina 19
         public void EditSong( string id, string title, string artist, string album, string cover, string fileLocation, string file)
         {
-            DataRow[] drArray = ds.Tables["songs"].Select("id = '" + id + "'");
+            /*DataRow[] drArray = ds.Tables["songs"].Select("id = '" + id + "'");
             {
                 drArray[0].Delete();
                 ds.WriteXml(HttpContext.Current.Server.MapPath(file));
@@ -75,9 +75,20 @@ namespace XmlCrud.App_Code
             dr[5] = fileLocation;
 
             ds.Tables["songs"].Rows.Add(dr);
+            ds.WriteXml(HttpContext.Current.Server.MapPath(file));*/
+
+            DataRow[] drArray = ds.Tables["songs"].Select("id = '" + id + "'");
+            {
+                drArray[0][0] = id;
+                drArray[0][1] = title;
+                drArray[0][2] = artist;
+                drArray[0][3] = album;
+                drArray[0][4] = cover;
+                drArray[0][5] = fileLocation;
+            }
+            ds.Tables["songs"].Rows.Add(drArray);
             ds.WriteXml(HttpContext.Current.Server.MapPath(file));
 
         }
-
     }
 }

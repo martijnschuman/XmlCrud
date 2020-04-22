@@ -4,10 +4,10 @@
 
     //Debug only
     console.log(id);
+    console.log(title);
     console.log(cover);
     console.log(filelocation);
     //Debug only
-
 
     document.getElementById("EditSongTitle").value = title;
     document.getElementById("EditSongArtist").value = artist;

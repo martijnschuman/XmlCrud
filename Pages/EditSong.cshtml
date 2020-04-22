@@ -16,26 +16,10 @@
         Artiest <input type="text" name="EditSongArtist" id="EditSongArtist" value="" /><br />
         Album <input type="text" name="EditSongAlbum" id="EditSongAlbum" value=""/><br />
 
-        <input type="radio" name="EditSong" value="ja" id="chekced" checked="checked"/>
+        <input type="radio" name="EditSong" value="ja" id="checked" checked="checked"/>
         <input type="hidden" name="EditSongId" id="EditSongHiddenInputID" value="" />
         <input type="hidden" name="EditSongCover" id="EditSongHiddenInputCover" value="" />
         <input type="hidden" name="EditSongFileLocation" id="EditSongHiddenInputFileLocation" value="" />
         <input type="submit" class="submit" id="EditSongSubmit" value="Verder" />
     </form>
 </div>
-
-@if (IsPost)
-{
-    if (Request.Form["EditSong"] == "ja")
-    {
-        string id = Request.Form["EditSongId"];
-        string title = Request.Form["EditSongTitle"];
-        string artist = Request.Form["EditSongArtist"];
-        string album = Request.Form["EditSongAlbum"];
-        string cover = Request.Form["EditSongCover"];
-        string fileLocation = Request.Form["EditSongFileLocation"];
-        mySongMethods.EditSong(id, title, artist, album, cover, fileLocation, file);
-    }
-
-    Response.Redirect(@"~/index.cshtml");
-}

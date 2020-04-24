@@ -20,12 +20,28 @@
     DataSet ds = mySongMethods.GetAllSongs(file);
     Session["playlistClass"] = mySongMethods;
     Session["file"] = file;
-    string playListUser = Session["username"].ToString()+"s";
+    string playListUser = Session["username"].ToString() + "s";
 
     DataRow lastRow = ds.Tables["songs"].Rows[ds.Tables["songs"].Rows.Count - 1];
     int lastId = int.Parse(lastRow["id"].ToString());
     int nextId = lastId + 1;
     Session["nextID"] = nextId;
+
+    if (IsPost)
+    {
+        if (Request.Form["EditSong"] == "ja")
+        {
+            string id = Request.Form["EditSongId"];
+            string title = Request.Form["EditSongTitle"];
+            string artist = Request.Form["EditSongArtist"];
+            string album = Request.Form["EditSongAlbum"];
+            string cover = Request.Form["EditSongCover"];
+            string fileLocation = Request.Form["EditSongFileLocation"];
+            mySongMethods.EditSong(id, title, artist, album, cover, fileLocation, file);
+        }
+
+        Response.Redirect(@"~/index.cshtml");
+    }
 }
 
 <html>
@@ -33,9 +49,9 @@
 <body>
     @RenderPage("~/Pages/DeleteSong.cshtml")
     @RenderPage("~/Pages/EditSong.cshtml")
-    
-    
-    
+
+
+
     <a class="loginLink" href="~/Pages/Account/Logout.cshtml">Logout</a>
 
     <script src="~/Scripts/MusicPlayer.js"></script>

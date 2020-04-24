@@ -7,3 +7,8 @@ nummers toevoegen
 nummers verwijderen
 nummers aanpassen
 nummers afspeelbaar doormiddel van js/yt api
+
+Muziek afspelen:
+Als er een nummer afgespeeld moet worden is de kans groot dat hij het niet meteen doet. 
+Om dit op te lossen moet de video die er staat aan het begin even snel aangeklikt te worden zodat de iframe hem pakt.
+Zodra er één keer op gelikt is kunnen de nummers uit de afspeellijst afgespeeld worden door te dubbel klikken op een nummer.

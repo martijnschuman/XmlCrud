@@ -39,6 +39,15 @@
             string fileLocation = Request.Form["EditSongFileLocation"];
             mySongMethods.EditSong(id, title, artist, album, cover, fileLocation, file);
         }
+        if (Request.Form["DeleteSong"] == "ja")
+        {
+            string keuze = Request.Form["DeleteSong"];
+            if (keuze == "ja")
+            {
+                string id = Request.Form["DeleteSongId"];
+                mySongMethods.DeleteSong(id, file);
+            }
+        }
 
         Response.Redirect(@"~/index.cshtml");
     }
@@ -90,6 +99,7 @@
                 <td class="TableEmptyTD"></td>
             </tr>
         }
+
     </table>
     <br /><br /><br /><br /><br />
     <span title="Open muziek speler">

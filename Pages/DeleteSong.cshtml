@@ -22,14 +22,3 @@
     </form>
 </div>
 
-@if (IsPost)
-{
-    string keuze = Request.Form["DeleteSong"];
-    if (keuze == "ja")
-    {
-        string id = Request.Form["DeleteSongId"];
-        mySongMethods.DeleteSong(id, file);
-    }
-
-    Response.Redirect(@"~/index.cshtml");
-}
